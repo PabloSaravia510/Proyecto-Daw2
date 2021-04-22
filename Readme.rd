@@ -1,5 +1,5 @@
 Integrantes: 
 
--Gomez Perez
--Saravia Pablo
+-Gomez Perez Carlos
+-Saravia Pablo Akira
 -Atau Huincho
