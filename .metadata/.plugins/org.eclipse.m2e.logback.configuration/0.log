@@ -1,0 +1,73 @@
+2021-04-21 22:41:23,285 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-04-21 22:47:00,890 [Worker-6: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\pom.xml
+2021-04-21 22:47:02,027 [Worker-6: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: net.spring.intranet:School_Manager:0.0.1-SNAPSHOT @ C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\pom.xml.
+2021-04-21 22:47:03,545 [Worker-6: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /School_Manager/src/main/java
+2021-04-21 22:47:03,547 [Worker-6: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /School_Manager/src/test/java
+2021-04-21 22:47:06,120 [Worker-6: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 5 sec
+2021-04-21 22:47:10,329 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:47:10,330 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 22:47:10,333 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:47:10,333 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 22:54:13,929 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:54:13,929 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 22:54:13,931 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:54:13,931 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 22:54:25,847 [Worker-19: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: net.spring.intranet:School_Manager:0.0.1-SNAPSHOT @ C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\pom.xml.
+2021-04-21 22:54:26,591 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:54:26,591 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 22:54:26,595 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:54:26,595 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 22:54:26,595 [Worker-19: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of School_Manager
+2021-04-21 22:54:26,596 [Worker-19: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for School_Manager
+2021-04-21 22:54:26,601 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:54:59,530 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:54:59,530 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 22:54:59,531 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:54:59,531 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 22:55:00,671 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:55:00,671 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 22:55:00,672 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:55:00,672 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 22:55:14,451 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:55:14,451 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 22:55:14,452 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 22:55:14,452 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:00:01,105 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:00:01,105 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 23:00:01,107 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:00:01,107 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:00:37,665 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:00:37,666 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 23:00:37,669 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:00:37,669 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:00:59,653 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:00:59,653 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 23:00:59,655 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:00:59,656 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:01:07,551 [Worker-25: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2021-04-21 23:01:07,997 [Worker-25: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: net.spring.intranet:School_Manager:0.0.1-SNAPSHOT @ C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\pom.xml.
+2021-04-21 23:01:08,783 [Worker-25: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /School_Manager/src/main/java
+2021-04-21 23:01:08,789 [Worker-25: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /School_Manager/src/test/java
+2021-04-21 23:01:10,447 [Worker-25: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for School_Manager
+2021-04-21 23:01:10,458 [Worker-25: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2021-04-21 23:01:10,548 [Worker-31: Building Project School_Manager] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:01:10,549 [Worker-31: Building Project School_Manager] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 23:01:10,551 [Worker-31: Building Project School_Manager] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:01:10,551 [Worker-31: Building Project School_Manager] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:01:10,551 [Worker-31: Building Project School_Manager] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of School_Manager
+2021-04-21 23:01:10,551 [Worker-31: Building Project School_Manager] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for School_Manager
+2021-04-21 23:01:10,558 [Worker-31: Building Project School_Manager] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:01:10,957 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:01:10,957 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 23:01:10,958 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:01:10,958 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:06:38,819 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:06:38,820 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 23:06:38,821 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:06:38,821 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:11:09,433 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-04-21 23:11:13,587 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:11:13,588 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-21 23:11:13,590 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-21 23:11:13,590 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-21 23:15:33,420 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
