@@ -1,4 +1,4 @@
 Integrantes: 
 
 -Gomez Perez Carlos
--Saravia Pablo
+-Saravia Pablo Akira
