@@ -3,3 +3,4 @@ Integrantes:
 -Saravia Pablo Akira
 -Edgar Poma
 -Atau Huincho
+-Stephany Rojas
