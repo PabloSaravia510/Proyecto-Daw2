@@ -4,3 +4,5 @@ Integrantes:
 -Edgar Poma
 -Atau Huincho
 -Stephany Rojas
+-Kevin Quispe Román
+
