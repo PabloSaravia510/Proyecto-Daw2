@@ -43,3 +43,9 @@ COD_PRO int(8) not null,
 COD_HOR int(8) not null
 );
 
+drop table if exists `tb_geolocalizacion`;
+create table `tb_geolocalizacion`(
+COD_GEO int(8) primary key not null,
+COR_GEO char(4) not null,
+COD_ALU char(1) not null
+);
