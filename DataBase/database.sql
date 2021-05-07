@@ -25,3 +25,38 @@ EST_REG char(1) not null
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+drop table if exists `tb_asistencia`;
+create table `tb_asistencia`(
+COD_ASI int (8) not null primary key,
+COD_ALU int(8) not null
+COD_CLA int(8) not null
+EST_REG char(1) not null
+);
+
+
+
