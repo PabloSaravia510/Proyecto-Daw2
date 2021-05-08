@@ -51,12 +51,23 @@ drop table if exists `tb_seccion`;
 create table `tb_seccion`(
 COD_SEC int(8)  not null auto_increment primary key,
 DES_SEC char(4) not null,
+DES_CURS varchar(50) not null,
+NOTA_1 int(2) not null,
+NOTA_2 int(2) not null,
 COD_PRO int(8) not null,
 COD_HOR int(8) not null,
 LFAL_SEC int(2) not null,
 LCLA_SEC int(2) not null,
 EST_REG char(1) not null
 );
+
+
+drop table if exists `tb_det_sec_asu`;
+create table `tb_det_sec_asu`(
+COD_SEC int(8) not null primary key,
+COD_ALU int(8) not null
+);
+
 
 
 drop table if exists `tb_clase`;
@@ -77,22 +88,6 @@ EST_REG char(1) not null
 
 
 
-drop table if exists `tb_administrador`;
-create table `tb_administrador`(
-COD_ADMIN int (8) not null auto_increment primary key,
-NOM_ADMIN varchar(150) not null,
-APE_ADMIN varchar(150) not null,
-USU_ADMIN char(10) not null,
-PASS_ADMIN char(16) not null,
-COD_SEC int(8) not null,
-COD_PRO int(8) not null,
-COD_ALU int(8) not null,
-EDAD_ADMIN int not null,
-CEL_ADMIN char(9) not null,
-DIR_ADMIN varchar(250) not null,
-EST_REG char(1) not null
-);
-
 
 drop table if exists `tb_geolocalizacion`;
 create table `tb_geolocalizacion`(
@@ -101,6 +96,20 @@ COR_GEO char(4) not null,
 COD_ALU int(8) not null
 );
 
+
+
+drop table if exists `tb_administrador`;
+create table `tb_administrador`(
+COD_ADMIN int (8) not null auto_increment primary key,
+NOM_ADMIN varchar(150) not null,
+APE_ADMIN varchar(150) not null,
+USU_ADMIN char(10) not null,
+PASS_ADMIN char(16) not null,
+EDAD_ADMIN int not null,
+CEL_ADMIN char(9) not null,
+DIR_ADMIN varchar(250) not null,
+EST_REG char(1) not null
+);
 
 
 drop table if exists `tb_QR`;
@@ -123,13 +132,11 @@ ALTER TABLE tb_clase
 ALTER TABLE tb_asistencia
 	ADD	CONSTRAINT FK_ASI_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU),
     ADD	CONSTRAINT FK_ASI_COD_CLA_ID FOREIGN KEY (COD_CLA) REFERENCES tb_clase (COD_CLA);
-ALTER TABLE tb_administrador
-	ADD	CONSTRAINT FK_ADMIN_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
-    ADD	CONSTRAINT FK_ADMIN_COD_PRO_ID FOREIGN KEY (COD_PRO) REFERENCES tb_profesor (COD_PRO),
-    ADD	CONSTRAINT FK_ADMIN_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);
 ALTER TABLE tb_geolocalizacion
 	ADD	CONSTRAINT FK_GEO_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);
-    
+ALTER TABLE tb_det_sec_asu
+	ADD	CONSTRAINT FK_det_sec_asu_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
+    ADD	CONSTRAINT FK_det_sec_asu_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);   
 
 
 
