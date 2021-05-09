@@ -1,4 +1,41 @@
+<<<<<<< HEAD
 INDEX VERSION 1.131+C:\Users\arman\Documents\Proyecto-Daw2\.metadata\.plugins\org.eclipse.jdt.core
 2580577876.index
 4224368075.index
 2815844755.index
+=======
+INDEX VERSION 1.131+C:\Users\ISS\Documents\Proyecto-Daw2\.metadata\.plugins\org.eclipse.jdt.core
+3773725435.index
+1446858663.index
+977403274.index
+4026812179.index
+1167666089.index
+2938436337.index
+1656244187.index
+2815844755.index
+1132993368.index
+3420418050.index
+261229138.index
+4160536754.index
+544159237.index
+2835246447.index
+4048117529.index
+1669169643.index
+1110842797.index
+815299879.index
+2048244314.index
+2348997864.index
+963488492.index
+319436401.index
+1848416218.index
+2124910194.index
+2271011394.index
+3960050009.index
+640716936.index
+1944658097.index
+2502785068.index
+2513703853.index
+2927677739.index
+3204893686.index
+937719452.index
+>>>>>>> dcd162552734971dc7ec9b329928b81f4bec2148

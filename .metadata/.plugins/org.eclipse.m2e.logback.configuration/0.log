@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-04-21 22:41:23,285 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2021-04-21 22:47:00,890 [Worker-6: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\pom.xml
 2021-04-21 22:47:02,027 [Worker-6: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: net.spring.intranet:School_Manager:0.0.1-SNAPSHOT @ C:\Users\AKIRA\Documents\Proyecto-Daw2\School_Manager\pom.xml.
@@ -89,3 +90,26 @@
 2021-04-21 23:34:24,412 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\arman\Documents\Proyecto-Daw2\School_Manager\src\main\resources
 2021-04-21 23:34:24,416 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-04-21 23:34:24,417 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\arman\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+=======
+2021-04-23 12:00:53,722 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-04-23 12:01:26,029 [Worker-2: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: net.spring.intranet:School_Manager:0.0.1-SNAPSHOT @ C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\pom.xml.
+2021-04-23 12:01:27,042 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /School_Manager/src/main/java
+2021-04-23 12:01:27,043 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /School_Manager/src/test/java
+2021-04-23 12:01:28,565 [Worker-2: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 4 sec
+2021-04-23 12:01:29,362 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:01:29,362 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-23 12:01:29,365 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:01:29,366 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-23 12:02:32,289 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:02:32,289 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-23 12:02:32,294 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:02:32,294 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-23 12:03:50,522 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:03:50,522 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-23 12:03:50,523 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:03:50,524 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+2021-04-23 12:04:43,912 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:04:43,912 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\main\resources
+2021-04-23 12:04:43,913 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-23 12:04:43,914 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ISS\Documents\Proyecto-Daw2\School_Manager\src\test\resources
+>>>>>>> dcd162552734971dc7ec9b329928b81f4bec2148
