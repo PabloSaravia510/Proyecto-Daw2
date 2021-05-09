@@ -65,10 +65,11 @@ EST_REG char(1) not null
 );
 
 
-drop table if exists `tb_det_sec_asu`;
-create table `tb_det_sec_asu`(
-COD_SEC int(8) not null primary key,
-COD_ALU int(8) not null
+drop table if exists `tb_det_sec_alu`;
+create table `tb_det_sec_alu`(
+COD_SEC int(8) not null,
+COD_ALU int(8) not null,
+primary key (COD_SEC,COD_ALU)
 );
 
 
@@ -108,9 +109,6 @@ NOM_ADMIN varchar(150) not null,
 APE_ADMIN varchar(150) not null,
 USU_ADMIN char(10) not null,
 PASS_ADMIN char(16) not null,
-EDAD_ADMIN int not null,
-CEL_ADMIN char(9) not null,
-DIR_ADMIN varchar(250) not null,
 ROL_USU int not null,
 EST_REG char(1) not null
 );
@@ -139,8 +137,9 @@ ALTER TABLE tb_asistencia
 ALTER TABLE tb_geolocalizacion
 	ADD	CONSTRAINT FK_GEO_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);
 ALTER TABLE tb_det_sec_asu
-	ADD	CONSTRAINT FK_det_sec_asu_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
-    ADD	CONSTRAINT FK_det_sec_asu_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);   
+	ADD	CONSTRAINT FK_DET_SEC_ALU_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
+    ADD	CONSTRAINT FK_DET_SEC_ALU_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);   
+
 
 
 
