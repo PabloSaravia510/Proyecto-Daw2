@@ -22,6 +22,7 @@ COD_CAR int(8) not null,
 EDAD_ALU int not null,
 CEL_ALU char(9) not null,
 DIR_ALU varchar(250) not null,
+ROL_USU int not null,
 EST_REG char(1) not null
 );
 
@@ -36,7 +37,9 @@ PASS_PRO char(16) not null,
 EDAD_PRO int not null,
 CEL_PRO char(9) not null,
 DIR_PRO varchar(250) not null,
-EST_PRO char(1) not null
+ROL_USU int not null,
+EST_REG char(1) not null
+
 );
 
 
@@ -108,6 +111,7 @@ PASS_ADMIN char(16) not null,
 EDAD_ADMIN int not null,
 CEL_ADMIN char(9) not null,
 DIR_ADMIN varchar(250) not null,
+ROL_USU int not null,
 EST_REG char(1) not null
 );
 
