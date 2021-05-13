@@ -12,6 +12,14 @@ DES_CAR varchar(250) not null,
 EST_REG char(1) not null
 );
 
+
+drop table if exists `tb_rol`;
+create table `tb_rol`(
+COD_ROL int (8) not null auto_increment primary key,
+DES_ROL varchar(250) not null
+);
+
+
 drop table if exists `tb_alumno`;
 create table `tb_alumno`(
 COD_ALU int (8) not null auto_increment primary key,
@@ -23,7 +31,7 @@ COD_CAR int(8) not null,
 EDAD_ALU int not null,
 CEL_ALU char(9) not null,
 DIR_ALU varchar(250) not null,
-ROL_USU int not null,
+COD_ROL int (8)  not null,
 EST_REG char(1) not null
 );
 
@@ -38,7 +46,7 @@ PASS_PRO char(16) not null,
 EDAD_PRO int not null,
 CEL_PRO char(9) not null,
 DIR_PRO varchar(250) not null,
-ROL_USU int not null,
+COD_ROL int (8)  not null,
 EST_REG char(1) not null
 
 );
@@ -107,7 +115,7 @@ NOM_ADMIN varchar(150) not null,
 APE_ADMIN varchar(150) not null,
 USU_ADMIN char(10) not null,
 PASS_ADMIN char(16) not null,
-ROL_USU int not null,
+COD_ROL int (8)  not null,
 EST_REG char(1) not null
 );
 
@@ -126,6 +134,7 @@ FEC_QR datetime not null
 
 ALTER TABLE tb_alumno
 	ADD	CONSTRAINT FK_ALU_COD_CAR_ID FOREIGN KEY (COD_CAR) REFERENCES tb_carrera (COD_CAR),
+	ADD	CONSTRAINT FK_ALU_COD_ROL_ID FOREIGN KEY (COD_ROL) REFERENCES tb_rol (COD_ROL),
 	ADD CONSTRAINT CHK_PASS_ALU CHECK (char_length(PASS_ALU) > 2 and char_length(PASS_ALU) < 16),
 	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'R', 'S', 'I')),
 	ADD CONSTRAINT UNQ_USU_ALU UNIQUE (USU_ALU),
@@ -133,6 +142,7 @@ ALTER TABLE tb_alumno
     
 ALTER TABLE tb_profesor 
 	ADD CONSTRAINT CHK_PASS_PRO CHECK (char_length(PASS_PRO) > 2 and char_length(PASS_PRO) < 16),
+	ADD	CONSTRAINT FK_PRO_COD_ROL_ID FOREIGN KEY (COD_ROL) REFERENCES tb_rol (COD_ROL),
 	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'R', 'S')),
 	ADD CONSTRAINT UNQ_USU_PRO UNIQUE (USU_PRO),
 	ALTER CEL_PRO SET DEFAULT 'NO';
@@ -161,6 +171,7 @@ ALTER TABLE tb_asistencia
 	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'I'));
     
 ALTER TABLE tb_administrador 
+	ADD	CONSTRAINT FK_ADMIN_COD_ROL_ID FOREIGN KEY (COD_ROL) REFERENCES tb_rol (COD_ROL),
 	ADD CONSTRAINT CHK_PASS_ADMIN CHECK (char_length(PASS_ADMIN) > 2 and char_length(PASS_ADMIN) < 16),
 	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'I')),
 	ADD CONSTRAINT UNQ_USU_ADMIN UNIQUE (USU_ADMIN);
