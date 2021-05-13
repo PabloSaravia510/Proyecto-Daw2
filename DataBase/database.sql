@@ -2,6 +2,8 @@ DROP DATABASE `db_proyecto_dawii`;
 CREATE database `db_proyecto_dawii`;
 use `db_proyecto_dawii`;
 
+-------------------------------------------------------------------------------------------------------------
+/*CREATE TABLAS*/
 
 drop table if exists `tb_carrera`;
 create table `tb_carrera`(
@@ -9,7 +11,6 @@ COD_CAR int (8) not null auto_increment primary key,
 DES_CAR varchar(250) not null,
 EST_REG char(1) not null
 );
-
 
 drop table if exists `tb_alumno`;
 create table `tb_alumno`(
@@ -73,7 +74,6 @@ primary key (COD_SEC,COD_ALU)
 );
 
 
-
 drop table if exists `tb_clase`;
 create table `tb_clase`(
 COD_CLA int(8) not null auto_increment primary key,
@@ -89,8 +89,6 @@ COD_ALU int(8) not null,
 COD_CLA int(8) not null,
 EST_REG char(1) not null
 );
-
-
 
 
 drop table if exists `tb_geolocalizacion`;
@@ -114,6 +112,7 @@ EST_REG char(1) not null
 );
 
 
+
 drop table if exists `tb_QR`;
 create table `tb_QR`(
 COD_QR int(8)  not null auto_increment primary key,
@@ -123,29 +122,80 @@ FEC_QR datetime not null
 
 
 -------------------------------------------------------------------------------------------------------------
+/*ALTER CONSTRAINT */
 
 ALTER TABLE tb_alumno
-	ADD	CONSTRAINT FK_ALU_COD_CAR_ID FOREIGN KEY (COD_CAR) REFERENCES tb_carrera (COD_CAR);
+	ADD	CONSTRAINT FK_ALU_COD_CAR_ID FOREIGN KEY (COD_CAR) REFERENCES tb_carrera (COD_CAR),
+	ADD CONSTRAINT CHK_PASS_ALU CHECK (char_length(PASS_ALU) > 2 and char_length(PASS_ALU) < 16),
+	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'R', 'S', 'I')),
+	ADD CONSTRAINT UNQ_USU_ALU UNIQUE (USU_ALU),
+	ALTER CEL_ALU SET DEFAULT 'NO';    
+    
+ALTER TABLE tb_profesor 
+	ADD CONSTRAINT CHK_PASS_PRO CHECK (char_length(PASS_PRO) > 2 and char_length(PASS_PRO) < 16),
+	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'R', 'S')),
+	ADD CONSTRAINT UNQ_USU_PRO UNIQUE (USU_PRO),
+	ALTER CEL_PRO SET DEFAULT 'NO';
+	 
+
 ALTER TABLE tb_seccion
 	ADD	CONSTRAINT FK_SEC_COD_PRO_ID FOREIGN KEY (COD_PRO) REFERENCES tb_profesor (COD_PRO),
-    ADD	CONSTRAINT FK_SEC_COD_HOR_ID FOREIGN KEY (COD_HOR) REFERENCES tb_horario (COD_HOR);
+    ADD	CONSTRAINT FK_SEC_COD_HOR_ID FOREIGN KEY (COD_HOR) REFERENCES tb_horario (COD_HOR),
+	ADD CONSTRAINT CHK_LFAL_SEC CHECK (char_length(LFAL_SEC) < 4),
+	ADD CONSTRAINT CHK_LCLA_SEC CHECK (char_length(LCLA_SEC) < 15),
+	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A','I')),
+	ALTER NOTA_1 SET DEFAULT 0,
+	ALTER NOTA_2 SET DEFAULT 0;
+   
+    
+    
 ALTER TABLE tb_clase
-	ADD	CONSTRAINT FK_CLA_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC);
+	ADD	CONSTRAINT FK_CLA_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
+	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'I'));
+    
+    
+    
 ALTER TABLE tb_asistencia
 	ADD	CONSTRAINT FK_ASI_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU),
-    ADD	CONSTRAINT FK_ASI_COD_CLA_ID FOREIGN KEY (COD_CLA) REFERENCES tb_clase (COD_CLA);
+    ADD	CONSTRAINT FK_ASI_COD_CLA_ID FOREIGN KEY (COD_CLA) REFERENCES tb_clase (COD_CLA),
+	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'I'));
+    
+ALTER TABLE tb_administrador 
+	ADD CONSTRAINT CHK_PASS_ADMIN CHECK (char_length(PASS_ADMIN) > 2 and char_length(PASS_ADMIN) < 16),
+	ADD CONSTRAINT CHK_EST_REG CHECK (EST_REG IN ('A', 'I')),
+	ADD CONSTRAINT UNQ_USU_ADMIN UNIQUE (USU_ADMIN);
+	 
+    
 ALTER TABLE tb_geolocalizacion
 	ADD	CONSTRAINT FK_GEO_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);
-ALTER TABLE tb_det_sec_asu
+    
+ALTER TABLE tb_det_sec_alu
 	ADD	CONSTRAINT FK_DET_SEC_ALU_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
     ADD	CONSTRAINT FK_DET_SEC_ALU_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);   
 
 
+/*ROL_USU 			
+1 = Administrador 
+2 = Docente
+3 = Estudiante
+*/
+
+
+/* EST_REG
+A = ACTIVO 
+I = INACTIVO 
+R = RETIRARO 
+S = SUSPENDIDO  
 
 
 
+tb_asistencia
+EST_REG
+A = ASISTIDO 
+I = INASISTIDO 
+*/
 
-
+-------------------------------------------------------------------------------------------------------------
 
 
 
