@@ -4,7 +4,7 @@ use `db_proyecto_dawii`;
 
 -------------------------------------------------------------------------------------------------------------
 /*CREATE TABLAS*/
-
+/**Nuevo cambio**/
 drop table if exists `tb_carrera`;
 create table `tb_carrera`(
 COD_CAR int (8) not null auto_increment primary key,
