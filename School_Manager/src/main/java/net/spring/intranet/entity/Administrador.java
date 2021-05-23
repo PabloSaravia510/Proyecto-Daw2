@@ -42,6 +42,8 @@ public class Administrador implements Serializable {
 	private char estadoRegistro;
 	
 	
+	
+	
 }
 
 

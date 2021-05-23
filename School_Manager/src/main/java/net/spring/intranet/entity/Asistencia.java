@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -23,14 +24,27 @@ public class Asistencia implements Serializable{
 	@Column(name = "COD_ASI")
 	private int codigoAsistencia;
 	
+	@Column(name = "EST_REG")
+	private char estadoRegistro;
+	
+	
+	@OneToMany
 	@Column(name = "COD_ALU")
 	private int codigoAlumno;
 	
 	@Column(name = "COD_CLA")
 	private int codigoClase;
 	
-	@Column(name = "EST_REG")
-	private char estadoRegistro;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

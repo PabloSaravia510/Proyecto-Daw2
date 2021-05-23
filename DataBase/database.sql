@@ -2,7 +2,7 @@ DROP DATABASE `db_proyecto_dawii`;
 CREATE database `db_proyecto_dawii`;
 use `db_proyecto_dawii`;
 
--------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 /*CREATE TABLAS*/
 /**Nuevo cambio**/
 drop table if exists `tb_carrera`;
@@ -129,6 +129,7 @@ FEC_QR datetime not null
 );
 
 
+
 -------------------------------------------------------------------------------------------------------------
 /*ALTER CONSTRAINT */
 
@@ -185,16 +186,18 @@ ALTER TABLE tb_det_sec_alu
     ADD	CONSTRAINT FK_DET_SEC_ALU_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);   
 
 
-/*ROL_USU 			
+/*ROL_USU 	-  TABLE USUARIOS		
 1 = Administrador 
 2 = Docente
 3 = Estudiante
 */
 
 
+
 /* EST_REG
 A = ACTIVO 
 I = INACTIVO 
+
 R = RETIRARO 
 S = SUSPENDIDO  
 

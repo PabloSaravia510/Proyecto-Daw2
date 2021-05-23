@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -34,9 +35,6 @@ public class Alumno implements Serializable {
 	@Column(name = "PASS_ALU")
 	private char passAlumno;
 	
-	@Column(name = "COD_CAR")
-	private int codigoCarrera;
-	
 	@Column(name = "EDAD_ALU")
 	private int edadAlumno;
 	
@@ -46,11 +44,27 @@ public class Alumno implements Serializable {
 	@Column(name = "DIR_ALU")
 	private String direccionAlumno;
 	
-	@Column(name = "ROL_USU")
-	private int rolUsuario;
+	//@Column(name = "ROL_USU")
+	//private int rolUsuario;
 	
 	@Column(name = "EST_REG")
 	private char estadoRegistro;
+	
+	
+	@ManyToOne
+	@Column(name = "COD_CAR")
+	private Carrera carrera;
+	
+	
+	
+	//@ManyToOne
+	//@Column(name = "COD_ROL")
+	//private String codigoRol;
+	
+	
+	
+	
+	
 	
 	
 	
