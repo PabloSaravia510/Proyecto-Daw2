@@ -1,12 +1,14 @@
 package net.spring.intranet.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,9 +30,13 @@ public class Asistencia implements Serializable{
 	private char estadoRegistro;
 	
 	
-	@OneToMany
+	@ManyToOne
 	@Column(name = "COD_ALU")
-	private int codigoAlumno;
+	private Alumno alumno;
+	
+	
+	
+	
 	
 	@Column(name = "COD_CLA")
 	private int codigoClase;

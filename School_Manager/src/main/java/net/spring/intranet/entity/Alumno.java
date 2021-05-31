@@ -1,6 +1,7 @@
 package net.spring.intranet.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -44,8 +48,7 @@ public class Alumno implements Serializable {
 	@Column(name = "DIR_ALU")
 	private String direccionAlumno;
 	
-	//@Column(name = "ROL_USU")
-	//private int rolUsuario;
+	
 	
 	@Column(name = "EST_REG")
 	private char estadoRegistro;
@@ -63,6 +66,9 @@ public class Alumno implements Serializable {
 	
 	
 	
+	@OneToMany(mappedBy = "alumno")
+	@JsonIgnore
+	private List<Asistencia> asistencia;
 	
 	
 	
