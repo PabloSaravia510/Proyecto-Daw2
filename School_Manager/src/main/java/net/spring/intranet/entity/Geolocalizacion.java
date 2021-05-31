@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -26,8 +28,11 @@ public class Geolocalizacion implements Serializable {
 	@Column(name = "COR_GEO")
 	private char cordenadaGeolocalizacion;
 	
-	@Column(name = "COD_ALU")
-	private int codigoAlumno;
+	
+	//relacion de geolocalizacion  a alumno
+	@ManyToOne
+	@JoinColumn(name = "COD_ALU")
+	private Alumno alumno;
 	
 	
 	

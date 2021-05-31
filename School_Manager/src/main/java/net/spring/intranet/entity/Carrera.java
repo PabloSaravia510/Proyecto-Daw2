@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -30,12 +31,13 @@ public class Carrera implements Serializable {
 	private String descripcionCarrera;
 	
 	@Column(name = "EST_REG")
-	private char estadoRegistro;
+	private String estadoRegistro;
 	
 	
-	//relacion de unos a muchos
+	//relacion carrera a alumnos
 	@OneToMany(mappedBy = "carrera")//nombre de la asociacion
-	private List<Alumno> listaAlumnos;
+	@JsonIgnore
+	private List<Alumno> alumnos;
 	
 	
 

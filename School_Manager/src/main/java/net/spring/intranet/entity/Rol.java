@@ -11,11 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name = "tb_rol")
+@Data
 public class Rol implements Serializable{
 	
 	@Id
@@ -27,6 +30,21 @@ public class Rol implements Serializable{
 	@Column(name = "DES_ROL")
 	private String descripcionRol;
 	
+	//realcion de rol a alumno
 	@OneToMany(mappedBy = "rol")
-	private List<Rol> listaRoles;
+	@JsonIgnore
+	private List<Alumno> alumno;
+	
+	
+	//relacion de rol a administrador
+	@OneToMany(mappedBy = "rol")
+	@JsonIgnore
+	private List<Administrador> administrador;
+	
+	//realcion de rol a profesor
+	@OneToMany(mappedBy = "rol")
+	@JsonIgnore
+	private List<Profesor> profesor;
+	
+	
 }

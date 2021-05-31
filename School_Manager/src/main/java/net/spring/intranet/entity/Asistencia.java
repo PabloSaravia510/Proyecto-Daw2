@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -27,30 +28,26 @@ public class Asistencia implements Serializable{
 	private int codigoAsistencia;
 	
 	@Column(name = "EST_REG")
-	private char estadoRegistro;
+	private String estadoRegistro;
 	
-	
+	//relacion de asistencia a alumno
 	@ManyToOne
-	@Column(name = "COD_ALU")
+	@JoinColumn(name = "COD_ALU")
 	private Alumno alumno;
 	
 	
 	
-	
-	
-	@Column(name = "COD_CLA")
-	private int codigoClase;
-	
-	
-	
+	//relacion de asistencia a clase
+	@ManyToOne
+	@JoinColumn(name = "COD_CLA")
+	private Clase clase;
 	
 	
 	
 	
 	
 	
-	
-	
+
 	
 	
 }

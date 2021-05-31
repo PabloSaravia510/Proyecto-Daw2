@@ -8,11 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 import lombok.Data;
 
@@ -51,25 +53,40 @@ public class Alumno implements Serializable {
 	
 	
 	@Column(name = "EST_REG")
-	private char estadoRegistro;
+	private String estadoRegistro;
 	
 	
+	//realacion de alumno a carrera
 	@ManyToOne
-	@Column(name = "COD_CAR")
+	@JoinColumn(name = "COD_CAR")
 	private Carrera carrera;
 	
 	
 	
-	//@ManyToOne
-	//@Column(name = "COD_ROL")
-	//private String codigoRol;
+	//relacion de alumno a rol
+	@ManyToOne
+	@JoinColumn(name = "COD_ROL")
+	private Rol rol;
 	
 	
-	
+	//relacion de de alumno a asistencia
 	@OneToMany(mappedBy = "alumno")
 	@JsonIgnore
 	private List<Asistencia> asistencia;
 	
+	
+	//relacion de alumno a geolocalizacion
+	@OneToMany(mappedBy = "alumno")
+	@JsonIgnore
+	private List<Geolocalizacion> geolocalizacion;
+	
+	
+	
+	
+	//relacionde de uno a muchos DetalleSeccionAlumno
+	@OneToMany(mappedBy = "alumno")
+	@JsonIgnore
+	private List<DetalleSeccionAlumno> listaDetalle;
 	
 	
 	

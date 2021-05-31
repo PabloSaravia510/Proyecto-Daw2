@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -35,11 +37,16 @@ public class Administrador implements Serializable {
 	@Column(name = "PASS_ADMIN")
 	private char passAdministrador;
 	
-	@Column(name = "ROL_USU")
-	private int rolUsuario;
-	
+
 	@Column(name = "EST_REG")
-	private char estadoRegistro;
+	private String estadoRegistro;
+	
+	//relacion de administrador con rol
+	@ManyToOne
+	@JoinColumn(name = "COD_ROL")
+	private Rol rol;
+	
+	
 	
 	
 	

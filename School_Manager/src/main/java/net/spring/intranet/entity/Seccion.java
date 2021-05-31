@@ -1,13 +1,19 @@
 package net.spring.intranet.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -35,11 +41,6 @@ public class Seccion implements Serializable {
 	@Column(name = "NOTA_2")
 	private int notaDos;
 	
-	@Column(name = "COD_PRO")
-	private int codigoProfesor;
-	
-	@Column(name = "COD_HOR")
-	private int codigoHorario;
 	
 	@Column(name = "LFAL_SEC")
 	private int lfalSeccion;
@@ -50,6 +51,29 @@ public class Seccion implements Serializable {
 	@Column(name = "EST_REG")
 	private char estadoRegistro;
 	
+	//relacion de seccion a profesor
+	@ManyToOne
+	@JoinColumn(name = "COD_PRO")
+	private Profesor profesor;
+	
+	
+	//relacion de seccion a horario
+	@ManyToOne
+	@JoinColumn(name = "COD_HOR")
+	private Horario horario;
+	
+	
+	//relacion de seccion a clase
+	@OneToMany(mappedBy = "seccion")
+	@JsonIgnore
+	private List<Clase> clase;
+	
+	
+	
+	//relacion de uno a muchos "DetalleSeccionAlumno"
+	@OneToMany(mappedBy = "seccion")
+	@JsonIgnore
+	private List<DetalleSeccionAlumno> listaDetalle;
 	
 	
 
