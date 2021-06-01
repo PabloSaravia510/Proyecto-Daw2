@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="../js/accordion.js"></script>
+
+</head>
+<body>
+    <input type="checkbox"  id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2>
+            <span class="las la-school"></span>
+            <span>School Manager</span>
+        </h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul id="accordion" class="accordion">
+                <li>
+                    <a class="link">
+                        <span class="left las la-home"></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="link" href="#">
+                        <span class="left las la-users"></span>
+                        <span>Asistencia</span>
+                        <span class="right las la-chevron-down"></span>
+
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Registro Asistencia</a></li>
+                        <li><a href="#">Autenticación</a></li>
+                        <li><a href="#">Geolocalización</a></li>
+                    </ul>
+                </li>
+               
+                <li>
+                    <a class="link">
+                        <span class="left las la-users"></span>
+                        <span>Usuario</span>
+                        <span class="right las la-chevron-down"></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Alumnos</a></li>
+                        <li><a href="#">Docentes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="link">
+                        <span class="left las la-user"></span>
+                        <span>Administración</span>
+                        <span class="right las la-chevron-down">
+                        </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Carrera</a></li>
+                        <li><a href="#">Sección</a></li>
+                        <li><a href="#">Clase</a></li>
+                        <li><a href="#">Horario</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="link">
+                        <span class="left las la-clipboard"></span>
+                        <span>Reporte</span>
+                        <span class="right las la-chevron-down"></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#">Reportes</a></li>
+    
+                    </ul>
+                </li>
+                <li>
+                    <a class="link">
+                        <span class="left las la-info-circle"></span>
+                        <span>Ayuda</span>
+                     </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h2>
+                    <label for="nav-toggle"><span class="las la-bars"></span></label>Dashboard
+                </h2>
+            </div>
+
+            <div class="search-wrapper">
+                <span class="las la-search">
+                    <input type="search" placeholder="Seach Here"/>
+                </span>
+            </div>
+
+            <div class="user-wrapper">
+                <img src="../img/img1.jpg" width="40px" height="40px" />
+                <div>
+                    <h4>Kevin Alexander</h4><small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="cards">
+                <div class="card-single">
+                    <div>
+                        <h1>54</h1>
+                        <span>Estudiantes</span>
+                    </div>
+                         <div><span class="las la-users"></span></div>
+                    
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1>79</h1>
+                        <span>Docentes</span>
+                    </div>
+                        <div><span class="las la-clipboard"></span></div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1>124</h1>
+                        <span>Secciones</span>
+                    </div>
+                        <div><span class="las la-shopping-bag"></span></div>
+                    
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1>$6k</h1>
+                        <span>Carreras</span>
+                    </div>
+                        <div><span class="lab la-google-wallet"></span></div>
+                    
+                </div>
+            </div>
+            <!--EDIT APART FROM THIS-->
+            <div class="recent-grid">
+                <div class="project">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Projects</h3>
+                            <button>See all<span class="las la-arrow-right"></span></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <td>Project Title</td>
+                                            <td>Department</td>
+                                            <td>Status</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>UI/UX Design</td>
+                                            <td>UI Team</td>
+                                            <td>
+                                                <span class="status purple"></span>
+                                                review
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web Development</td>
+                                            <td>Frontend</td>
+                                            <td>
+                                                <span class="status pink"></span>
+                                                in progress
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ushop app</td>
+                                            <td>Mobile Team</td>
+                                            <td>
+                                                <span class="status orange"></span>
+                                                pending
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>UI/UX Design</td>
+                                            <td>UI Team</td>
+                                            <td>
+                                                <span class="status purple"></span>
+                                                review
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web Development</td>
+                                            <td>Frontend</td>
+                                            <td>
+                                                <span class="status pink"></span>
+                                                in progress
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ushop app</td>
+                                            <td>Mobile Team</td>
+                                            <td>
+                                                <span class="status orange"></span>
+                                                pending
+                                            </td>
+                                        </tr>
+
+                                        
+                                        <tr>
+                                            <td>UI/UX Design</td>
+                                            <td>UI Team</td>
+                                            <td>
+                                                <span class="status purple"></span>
+                                                review
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web Development</td>
+                                            <td>Frontend</td>
+                                            <td>
+                                                <span class="status pink"></span>
+                                                in progress
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ushop app</td>
+                                            <td>Mobile Team</td>
+                                            <td>
+                                                <span class="status orange"></span>
+                                                pending
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="customer">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>New Customer</h3>
+                            <button>See all<span class="las la-arrow-right"></span></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="customer">
+                                <div class="info">
+                                    <img src="../img/img2.jpg" alt="" width="40px" height="40px">
+                                    <div >
+                                        <h4>Alexandra G. Alvites</h4>
+                                        <small>CEO Expert</small>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>	
+                            </div>
+                            
+                            <div class="customer">
+                                <div class="info">
+                                    <img src="../img/img2.jpg" alt="" width="40px" height="40px">
+                                    <div >
+                                        <h4>Alexandra G. Alvites</h4>
+                                        <small>CEO Expert</small>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>	
+                            </div>
+
+                            <div class="customer">
+                                <div class="info">
+                                    <img src="../img/img2.jpg" alt="" width="40px" height="40px">
+                                    <div >
+                                        <h4>Alexandra G. Alvites</h4>
+                                        <small>CEO Expert</small>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>	
+                            </div>
+
+                            <div class="customer">
+                                <div class="info">
+                                    <img src="../img/img2.jpg" alt="" width="40px" height="40px">
+                                    <div >
+                                        <h4>Alexandra G. Alvites</h4>
+                                        <small>CEO Expert</small>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>	
+                            </div>
+
+                            <div class="customer">
+                                <div class="info">
+                                    <img src="../img/img2.jpg" alt="" width="40px" height="40px">
+                                    <div >
+                                        <h4>Alexandra G. Alvites</h4>
+                                        <small>CEO Expert</small>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>	
+                            </div>
+
+                            <div class="customer">
+                                <div class="info">
+                                    <img src="../img/img2.jpg" alt="" width="40px" height="40px">
+                                    <div >
+                                        <h4>Alexandra G. Alvites</h4>
+                                        <small>CEO Expert</small>
+                                    </div>
+                                    <div class="contact">
+                                        <span class="las la-user-circle"></span>
+                                        <span class="las la-comment"></span>
+                                        <span class="las la-phone"></span>
+                                    </div>
+                                </div>	
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
