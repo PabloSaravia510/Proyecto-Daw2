@@ -1,4 +1,4 @@
-DROP DATABASE `db_proyecto_dawii`;
+DROP DATABASE if exists `db_proyecto_dawii`;
 CREATE database `db_proyecto_dawii`;
 use `db_proyecto_dawii`;
 -------------------------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ FEC_QR datetime not null
 -------------------------------------------------------------------------------------------------------------
 /*-- ALTER CONSTRAINT --*/
 ALTER TABLE tb_carrera
-	ADD CONSTRAINT CHK_EST_REG_CAR CHECK (EST_REG IN ('A','I'));
+	ADD CONSTRAINT CHK_EST_REG_CAR CHECK (EST_REG IN ('ACTIVO','INACTIVO'));
 
 ALTER TABLE tb_alumno
 	ADD	CONSTRAINT FK_ALU_COD_CAR_ID FOREIGN KEY (COD_CAR) REFERENCES tb_carrera (COD_CAR),
@@ -149,7 +149,7 @@ ALTER TABLE tb_clase
 ALTER TABLE tb_asistencia
 	ADD	CONSTRAINT FK_ASI_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU),
     ADD	CONSTRAINT FK_ASI_COD_CLA_ID FOREIGN KEY (COD_CLA) REFERENCES tb_clase (COD_CLA),
-	ADD CONSTRAINT CHK_EST_REG_CLA CHECK (EST_REG IN ('ASISTIDO', 'INASISTIDO'));
+	ADD CONSTRAINT CHK_EST_REG_ASIST CHECK (EST_REG IN ('ASISTIDO', 'INASISTIDO'));
     
 ALTER TABLE tb_administrador 
 	ADD	CONSTRAINT FK_ADMIN_COD_ROL_ID FOREIGN KEY (COD_ROL) REFERENCES tb_rol (COD_ROL),
@@ -164,23 +164,6 @@ ALTER TABLE tb_det_sec_alu
 	ADD	CONSTRAINT FK_DET_SEC_ALU_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
     ADD	CONSTRAINT FK_DET_SEC_ALU_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU);   
 
-/*ROL_USU 			
-1 = Administrador 
-2 = Docente
-3 = Estudiante
-*/
-
-/* EST_REG
-A = ACTIVO 
-I = INACTIVO 
-R = RETIRADO 
-S = SUSPENDIDO  
-
-tb_asistencia
-EST_REG
-A = ASISTIDO 
-I = INASISTIDO 
-*/
 
 /*---------------------------------------------------------------------------------------------------------------*/
     
@@ -207,3 +190,21 @@ INSERT INTO `db_proyecto_dawii`.`tb_horario` (`COD_HOR`, `DES_HOR`) VALUES ('3',
 
 INSERT INTO `db_proyecto_dawii`.`tb_seccion` (`COD_SEC`,`DES_SEC`, `DES_CURS`, `NOTA_1`, `NOTA_2`, `COD_PRO`, `COD_HOR`, `LFAL_SEC`, `LCLA_SEC`, `EST_REG`) VALUES (1,'T4BB', 'Lenguaje de Programacion', '16', '18', '1', '1', '3', '14', 'ACTIVO');
 INSERT INTO `db_proyecto_dawii`.`tb_seccion` (`COD_SEC`,`DES_SEC`, `DES_CURS`, `NOTA_1`, `NOTA_2`, `COD_PRO`, `COD_HOR`, `LFAL_SEC`, `LCLA_SEC`, `EST_REG`) VALUES (2,'T4DB', 'Gestion de proyecto', '15', '19', '1', '2', '3', '7', 'ACTIVO');
+
+/*ROL_USU 			
+1 = Administrador 
+2 = Docente
+3 = Estudiante
+*/
+
+/* EST_REG
+A = ACTIVO 
+I = INACTIVO 
+R = RETIRADO 
+S = SUSPENDIDO  
+
+tb_asistencia
+EST_REG
+A = ASISTIDO 
+I = INASISTIDO 
+*/
