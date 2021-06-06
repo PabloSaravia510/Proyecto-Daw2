@@ -9,9 +9,14 @@ public interface SeccionDAO {
 	
 	public void actualizar(Seccion bean);
 	
+	public void actualizarAgregarAlumno(Seccion bean, int codAlu);
+
+	public void actualizarQuitarAlumno(Seccion bean, int codAlu);
+	
 	public void eliminar(int cod);
 	
 	public List<Seccion> listarSecciones();
 	
 	public Seccion buscar(int cod);
+	
 }

@@ -84,7 +84,7 @@ drop table if exists `tb_asistencia`;
 create table `tb_asistencia`(
 COD_ASI int (8) not null auto_increment primary key,
 COD_ALU int(8) not null,
-COD_CLA int(8) not null,
+NRO_CLA_ASI int(1) not null,
 EST_REG varchar(25) not null
 );
 
@@ -145,12 +145,12 @@ ALTER TABLE tb_seccion
 ALTER TABLE tb_clase
 	ADD	CONSTRAINT FK_CLA_COD_SEC_ID FOREIGN KEY (COD_SEC) REFERENCES tb_seccion (COD_SEC),
 	ADD CONSTRAINT CHK_EST_REG_CLA CHECK (EST_REG IN ('ACTIVO', 'INACTIVO'));
-    
+/*    
 ALTER TABLE tb_asistencia
 	ADD	CONSTRAINT FK_ASI_COD_ALU_ID FOREIGN KEY (COD_ALU) REFERENCES tb_alumno (COD_ALU),
     ADD	CONSTRAINT FK_ASI_COD_CLA_ID FOREIGN KEY (COD_CLA) REFERENCES tb_clase (COD_CLA),
 	ADD CONSTRAINT CHK_EST_REG_ASIST CHECK (EST_REG IN ('ASISTIDO', 'INASISTIDO'));
-    
+*/    
 ALTER TABLE tb_administrador 
 	ADD	CONSTRAINT FK_ADMIN_COD_ROL_ID FOREIGN KEY (COD_ROL) REFERENCES tb_rol (COD_ROL),
 	ADD CONSTRAINT CHK_PASS_ADMIN CHECK (char_length(PASS_ADMIN) > 2 and char_length(PASS_ADMIN) < 16),

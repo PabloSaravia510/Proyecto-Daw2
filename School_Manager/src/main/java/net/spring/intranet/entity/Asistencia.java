@@ -27,6 +27,9 @@ public class Asistencia implements Serializable{
 	@Column(name = "COD_ASI")
 	private int codigoAsistencia;
 	
+	@Column(name = "NRO_CLA_ASI")
+	private int numeroDeClaseAsistencia;
+	
 	@Column(name = "EST_REG")
 	private String estadoRegistro;
 	
@@ -37,10 +40,10 @@ public class Asistencia implements Serializable{
 	
 	
 	
-	//relacion de asistencia a clase
-	@ManyToOne
-	@JoinColumn(name = "COD_CLA")
-	private Clase clase;
+//	//relacion de asistencia a clase
+//	@ManyToOne
+//	@JoinColumn(name = "COD_CLA")
+//	private Clase clase;
 	
 	
 	
