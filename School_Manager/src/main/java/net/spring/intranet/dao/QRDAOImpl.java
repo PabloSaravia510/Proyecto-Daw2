@@ -5,10 +5,12 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import net.spring.intranet.entity.QR;
 
+@Repository
 public class QRDAOImpl implements QRDAO{
 	@Autowired
 	private SessionFactory factory;
