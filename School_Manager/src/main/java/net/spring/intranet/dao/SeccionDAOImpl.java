@@ -110,26 +110,28 @@ public class SeccionDAOImpl implements SeccionDAO{
 //			guardar Cabecera
 			session.save(bean);
 			
-//			guardar detalle
-//			bucle
-			for(DetalleSeccionAlumno dsa: bean.getListaDetalle()) {
-				DetalleSeccionAlumnoPK pk = new DetalleSeccionAlumnoPK();
-				pk.setCodigoSeccion(bean.getCodigoSeccion());
-				pk.setCodigoAlumno(dsa.getAlumno().getCodigoAlumno());
-				
-//				enviar pk al objeto dsa
-				dsa.setPk(pk);
-				
+			if(bean.getListaDetalle() != null) {
 //				guardar detalle
-				session.save(dsa);
-				
+//				bucle
+				for(DetalleSeccionAlumno dsa: bean.getListaDetalle()) {
+					DetalleSeccionAlumnoPK pk = new DetalleSeccionAlumnoPK();
+					pk.setCodigoSeccion(bean.getCodigoSeccion());
+					pk.setCodigoAlumno(dsa.getAlumno().getCodigoAlumno());
+					
+//				enviar pk al objeto dsa
+					dsa.setPk(pk);
+					
+//				guardar detalle
+					session.save(dsa);
+					
 //				guardar detalle de detalle, recorre for hasta agotar el limite de clases por seccion
-				for (int i = 1; i <= bean.getLclaSeccion(); i++) {
-					Asistencia beanAsi = new Asistencia();
-					beanAsi.setCodigoAsistencia(pk.getCodigoAlumno());
-					beanAsi.setNumeroDeClaseAsistencia(i);
-					beanAsi.setEstadoRegistro("INASISTIDO");
-					session.save(beanAsi);
+					for (int i = 1; i <= bean.getLclaSeccion(); i++) {
+						Asistencia beanAsi = new Asistencia();
+						beanAsi.setCodigoAsistencia(pk.getCodigoAlumno());
+						beanAsi.setNumeroDeClaseAsistencia(i);
+						beanAsi.setEstadoRegistro("INASISTIDO");
+						session.save(beanAsi);
+					}
 				}
 			}
 			
