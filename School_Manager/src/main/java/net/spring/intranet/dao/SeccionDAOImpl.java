@@ -7,6 +7,7 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import net.spring.intranet.entity.Asistencia;
@@ -14,6 +15,7 @@ import net.spring.intranet.entity.DetalleSeccionAlumno;
 import net.spring.intranet.entity.DetalleSeccionAlumnoPK;
 import net.spring.intranet.entity.Seccion;
 
+@Repository
 public class SeccionDAOImpl implements SeccionDAO{
 	@Autowired
 	private SessionFactory factory;
@@ -137,6 +139,7 @@ public class SeccionDAOImpl implements SeccionDAO{
 	}
 
 	@Override
+	@Transactional
 	public void actualizarAgregarAlumno(Seccion bean, int codAlu) {
 		Session session = factory.getCurrentSession();
 		
@@ -164,6 +167,7 @@ public class SeccionDAOImpl implements SeccionDAO{
 	}
 
 	@Override
+	@Transactional
 	public void actualizarQuitarAlumno(Seccion bean, int codAlu) {
 		Session session = factory.getCurrentSession();
 		
@@ -188,6 +192,22 @@ public class SeccionDAOImpl implements SeccionDAO{
 			session.delete(beanAsi);
 		}
 	
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Seccion> consultarSeccionXProfesor(int codPro) {
+		Session session = factory.getCurrentSession();
+		Query query = null;
+		try {
+			String hql = "select s from Seccion s where profesor.codigoProfesor=?1";
+			query = session.createQuery(hql);
+			query.setParameter(1, codPro);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return query.getResultList();
 	}
 	
 

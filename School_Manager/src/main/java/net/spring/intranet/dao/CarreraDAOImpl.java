@@ -7,10 +7,12 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import net.spring.intranet.entity.Carrera;
 
+@Repository
 public class CarreraDAOImpl implements CarreraDAO{
 	@Autowired
 	private SessionFactory factory;

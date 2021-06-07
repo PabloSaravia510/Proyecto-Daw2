@@ -1,10 +1,12 @@
-package net.spring.intranet.dao;
+package net.spring.intranet.service;
 
 import java.util.List;
 
+import net.spring.intranet.entity.Profesor;
 import net.spring.intranet.entity.Seccion;
 
-public interface SeccionDAO {
+public interface SeccionService {
+	
 	public void insertar(Seccion bean);
 	
 	public void actualizar(Seccion bean);
@@ -20,5 +22,5 @@ public interface SeccionDAO {
 	public Seccion buscar(int cod);
 	
 	public List<Seccion> consultarSeccionXProfesor(int codPro);
-	
+
 }

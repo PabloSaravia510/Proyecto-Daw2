@@ -30,7 +30,7 @@ public class Seccion implements Serializable {
 	private int codigoSeccion;
 	
 	@Column(name = "DES_SEC")
-	private char descripcionSeccion;
+	private String descripcionSeccion;
 	
 	@Column(name = "DES_CURS")
 	private String descripcionCurso;
@@ -49,7 +49,7 @@ public class Seccion implements Serializable {
 	private int lclaSeccion;
 	
 	@Column(name = "EST_REG")
-	private char estadoRegistro;
+	private String estadoRegistro;
 	
 	//relacion de seccion a profesor
 	@ManyToOne

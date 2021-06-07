@@ -36,16 +36,16 @@ public class Alumno implements Serializable {
 	private String apellidoAlumno;
 	
 	@Column(name = "USU_ALU")
-	private char usuarioAlumno;
+	private String usuarioAlumno;
 	
 	@Column(name = "PASS_ALU")
-	private char passAlumno;
+	private String passAlumno;
 	
 	@Column(name = "EDAD_ALU")
 	private int edadAlumno;
 	
 	@Column(name = "CEL_ALU")
-	private char celularAlumno;
+	private String celularAlumno;
 	
 	@Column(name = "DIR_ALU")
 	private String direccionAlumno;

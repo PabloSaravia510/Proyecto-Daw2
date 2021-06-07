@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 
@@ -40,10 +42,10 @@ public class Asistencia implements Serializable{
 	
 	
 	
-//	//relacion de asistencia a clase
-//	@ManyToOne
-//	@JoinColumn(name = "COD_CLA")
-//	private Clase clase;
+	//relacion de asistencia a clase
+	@ManyToOne
+	@JoinColumn(name = "COD_CLA")
+	private Clase clase;
 	
 	
 	

@@ -1,10 +1,11 @@
-package net.spring.intranet.dao;
+package net.spring.intranet.service;
 
 import java.util.List;
 
 import net.spring.intranet.entity.Alumno;
 
-public interface AlumnoDAO {
+
+public interface AlumnoService {
 	
 	public Alumno iniciarSesion(String user, String pass, int codRol);
 	
