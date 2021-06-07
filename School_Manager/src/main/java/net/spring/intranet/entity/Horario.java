@@ -11,9 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
@@ -29,8 +28,8 @@ public class Horario implements Serializable {
 	@Column(name = "COD_HOR")
 	private int codigoHorario;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(name = "DES_HOR")
+	@JsonFormat(pattern="HH:mm")
 	private Date descripcionHorario; 
 	
 	

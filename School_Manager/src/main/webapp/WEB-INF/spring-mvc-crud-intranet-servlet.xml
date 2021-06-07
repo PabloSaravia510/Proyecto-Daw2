@@ -52,7 +52,7 @@
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/db_proyecto_dawii?serverTimezone=UTC" />
         <property name="user" value="root" />
-        <property name="password" value="" /> 
+        <property name="password" value="mysql" /> 
 
         <!-- these are connection pool properties for C3P0 -->
         <property name="minPoolSize" value="5" />
