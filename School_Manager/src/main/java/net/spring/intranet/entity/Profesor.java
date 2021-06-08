@@ -35,16 +35,16 @@ public class Profesor implements Serializable {
 	private String apellidoProfesor;
 	
 	@Column(name = "USU_PRO")
-	private char usuarioProfesor;
+	private String usuarioProfesor;
 	
 	@Column(name = "PASS_PRO")
-	private char passProfesor;
+	private String passProfesor;
 	
 	@Column(name = "EDAD_PRO")
 	private int edadProfesor;
 	
 	@Column(name = "CEL_PRO")
-	private char celularProfesor;
+	private String celularProfesor;
 	
 	@Column(name = "DIR_PRO")
 	private String direccionProfesor;
@@ -52,7 +52,7 @@ public class Profesor implements Serializable {
 	
 	
 	@Column(name = "EST_REG")
-	private char estadoRegistro;
+	private String estadoRegistro;
 	
 	
 	//relacion de profesor a rol

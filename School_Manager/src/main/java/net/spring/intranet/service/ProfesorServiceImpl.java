@@ -22,19 +22,19 @@ public class ProfesorServiceImpl implements ProfesorService{
 
 	@Override
 	public void insertar(Profesor bean) {
-		// TODO Auto-generated method stub
+		profesorDAO.insertar(bean);
 		
 	}
 
 	@Override
 	public void actualizar(Profesor bean) {
-		// TODO Auto-generated method stub
+		profesorDAO.actualizar(bean);
 		
 	}
 
 	@Override
 	public void eliminar(int cod) {
-		// TODO Auto-generated method stub
+		profesorDAO.eliminar(cod);
 		
 	}
 
@@ -45,8 +45,7 @@ public class ProfesorServiceImpl implements ProfesorService{
 
 	@Override
 	public Profesor buscar(int cod) {
-		// TODO Auto-generated method stub
-		return null;
+		return profesorDAO.buscar(cod);
 	}
 
 }
