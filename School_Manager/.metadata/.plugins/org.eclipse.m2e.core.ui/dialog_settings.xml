@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="G:\ws_git\Proyecto-Daw2\School_Manager"/>
+			<item value="C:\Users\AKIRA\Documents\Proyecto-Daw2"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
