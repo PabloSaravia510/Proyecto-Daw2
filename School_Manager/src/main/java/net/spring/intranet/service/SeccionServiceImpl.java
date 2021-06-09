@@ -27,16 +27,6 @@ public class SeccionServiceImpl implements SeccionService{
 		
 	}
 
-	@Override
-	public void actualizarAgregarAlumno(Seccion bean, int codAlu) {
-		
-	}
-
-	@Override
-	public void actualizarQuitarAlumno(Seccion bean, int codAlu) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void eliminar(int cod) {
@@ -58,5 +48,7 @@ public class SeccionServiceImpl implements SeccionService{
 	public List<Seccion> consultarSeccionXProfesor(int codPro) {
 		return seccionDAO.consultarSeccionXProfesor(codPro);
 	}
+
+	
 
 }

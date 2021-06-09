@@ -82,13 +82,13 @@ public class Alumno implements Serializable {
 	
 	
 	
-	
-	//relacionde de uno a muchos DetalleSeccionAlumno
+	//relacion de alumno a det_Sec_alu
 	@OneToMany(mappedBy = "alumno")
 	@JsonIgnore
-	private List<DetalleSeccionAlumno> listaDetalle;
-	
-	
+	private List<Det_Sec_Alu> detSecAlu;
+		
+		
+
 	
 	
 }

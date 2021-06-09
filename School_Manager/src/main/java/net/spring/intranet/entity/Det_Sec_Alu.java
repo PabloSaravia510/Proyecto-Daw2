@@ -10,40 +10,46 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
-
-
 @Entity
-@Table(name = "tb_clase")
+@Table(name = "tb_det_sec_alu")
 @Data
-public class Clase implements Serializable{
+public class Det_Sec_Alu implements Serializable {
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COD_CLA")
-	private int codigoClase;
+	@Column(name = "COD_SEC_ALU")
+	private int codSecAlu;
 	
 	
-	@Column(name = "EST_REG")
-	private String estadoRegistro;
+	@Column(name = "NOTA_1")
+	private int nota1;
 	
-	//relacion de clase a seccion
+	@Column(name = "NOTA_2")
+	private int nota2;
+	
+	
+	
+	
+	//relacion de det_sec_alu a seccion
 	@ManyToOne
 	@JoinColumn(name = "COD_SEC")
 	private Seccion seccion;
 	
-	//relacion de clase a asistencia
-	@OneToMany(mappedBy = "clase")
-	@JsonIgnore
-	private List<Asistencia> asistencia;
 	
 	
+	
+
+	//relacion de det_sec_alu a alumno
+	@ManyToOne
+	@JoinColumn(name = "COD_ALU")
+	private Alumno alumno;
 	
 	
 	

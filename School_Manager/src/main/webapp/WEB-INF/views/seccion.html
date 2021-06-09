@@ -105,7 +105,7 @@
 			  <ul class="navbar-nav">
 		
 				    <li class="nav-item">
-				      <a class="nav-link" th:href="@{/docente/}">Docente</a>
+				      <a class="nav-link" th:href="@{/profesor/}">Docente</a>
 				    </li>
 					<li class="nav-item">
 				      <a class="nav-link" th:href="@{/alumno/}">Alumno</a>
@@ -176,8 +176,6 @@
 					                <th>Código</th>
 					                <th>Seccion</th>
 					                <th>Curso</th>
-					                <th>Nota 1</th>
-					                <th>Nota 2</th>
 					                <th>Profesor</th>
 					                <th>Hora</th>
 					                <th>Limites de Faltas</th>
@@ -190,8 +188,6 @@
 							      <td th:text="${bean.codigoSeccion}"></td>
 							      <td th:text="${bean.descripcionSeccion}"></td>
 							      <td th:text="${bean.descripcionCurso}"></td>
-							      <td th:text="${bean.notaUno}"></td>
-							      <td th:text="${bean.notaDos}"></td>
 							      <td th:text="${bean.profesor.nombreProfesor}"></td>
 							      <td th:text="${bean.horario.descripcionHorario}"></td>
 							      <td th:text="${bean.lfalSeccion}"></td>
@@ -238,17 +234,6 @@
 													<input type="text" class="form-control" name="curso" id="idCurso" placeholder="Ingresar curso">	
 												</div>
 												
-												<div class="form-group has-feedback col-md-6">
-													<label for="exampleInputEmail1"><b>Nota 1</b></label><br>
-													<i class="fas fa-money-check-alt form-control-feedback2"></i>
-													<input type="text" class="form-control"  name="nota1" id="idNota1" placeholder="Ingresar nota 1">														
-												</div>
-												
-												<div class="form-group has-feedback col-md-6">
-													<label for="exampleInputEmail1"><b>Nota 2</b></label><br>
-													<i class="fas fa-money-check-alt form-control-feedback2"></i>
-													<input type="text"  class="form-control"  name="nota2" id="idNota2" placeholder="Ingresar nota 2">														
-												</div>
 											    
 												 <div class="form-group has-feedback col-md-6">	
 														<label for="exampleInputEmail1"><b>Profesor</b></label><br>
@@ -367,8 +352,6 @@
 				$("#idCodigo").val(response.codigoSeccion);
 				$("#idSeccion").val(response.descripcionSeccion);
 				$("#idCurso").val(response.descripcionCurso);
-				$("#idNota1").val(response.notaUno);
-				$("#idNota2").val(response.notaDos);
 				$("#idProfesor").val(response.profesor.codigoProfesor);
 				$("#idHorario").val(response.horario.codigoHorario);
 				$("#idLfalta").val(response.lfalSeccion);

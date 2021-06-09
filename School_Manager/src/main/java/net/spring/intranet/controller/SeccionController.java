@@ -56,8 +56,6 @@ public class SeccionController {
 	public String guardar(@RequestParam("codigo") int cod,
 						  @RequestParam("seccion")  String sec,
 						  @RequestParam("curso")  String cur,
-						  @RequestParam("nota1")  int not1,
-						  @RequestParam("nota2")  int not2,
 						  @RequestParam("profesor")  int pro,
 						  @RequestParam("horario")  int hor,
 						  @RequestParam("lfalta")  int lfal,
@@ -71,8 +69,7 @@ public class SeccionController {
 			beanSecc.setCodigoSeccion(cod);
 			beanSecc.setDescripcionSeccion(sec);
 			beanSecc.setDescripcionCurso(cur);
-			beanSecc.setNotaUno(not1);
-			beanSecc.setNotaDos(not2);
+
 			Profesor profe = new Profesor();
 			profe.setCodigoProfesor(pro);
 			beanSecc.setProfesor(profe);

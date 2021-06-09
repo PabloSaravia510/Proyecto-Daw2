@@ -11,10 +11,6 @@ public interface SeccionService {
 	
 	public void actualizar(Seccion bean);
 	
-	public void actualizarAgregarAlumno(Seccion bean, int codAlu);
-
-	public void actualizarQuitarAlumno(Seccion bean, int codAlu);
-	
 	public void eliminar(int cod);
 	
 	public List<Seccion> listarSecciones();

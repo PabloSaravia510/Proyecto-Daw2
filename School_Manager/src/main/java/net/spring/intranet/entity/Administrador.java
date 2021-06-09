@@ -41,6 +41,8 @@ public class Administrador implements Serializable {
 	@Column(name = "EST_REG")
 	private String estadoRegistro;
 	
+	
+	
 	//relacion de administrador con rol
 	@ManyToOne
 	@JoinColumn(name = "COD_ROL")

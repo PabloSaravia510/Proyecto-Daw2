@@ -35,13 +35,7 @@ public class Seccion implements Serializable {
 	@Column(name = "DES_CURS")
 	private String descripcionCurso;
 	
-	@Column(name = "NOTA_1")
-	private int notaUno;
-	
-	@Column(name = "NOTA_2")
-	private int notaDos;
-	
-	
+
 	@Column(name = "LFAL_SEC")
 	private int lfalSeccion;
 	
@@ -63,21 +57,20 @@ public class Seccion implements Serializable {
 	private Horario horario;
 	
 	
-	//relacion de seccion a clase
+	
+	//relacion de seccion a asistencia
 	@OneToMany(mappedBy = "seccion")
 	@JsonIgnore
-	private List<Clase> clase;
+	private List<Asistencia> asistencias ;
 	
 	
 	
-	//relacion de uno a muchos "DetalleSeccionAlumno"
+	//relacion de seccion a det_Sec_alu
 	@OneToMany(mappedBy = "seccion")
 	@JsonIgnore
-	private List<DetalleSeccionAlumno> listaDetalle;
-	
-	
-
-	
-	
+	private List<Det_Sec_Alu> detSecAlus ;
+		
+		
+		
 	
 }
