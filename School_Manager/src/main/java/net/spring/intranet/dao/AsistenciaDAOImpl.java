@@ -31,6 +31,22 @@ public class AsistenciaDAOImpl implements AsistenciaDAO{
 
 	@Override
 	@Transactional(readOnly = true)
+	public List<Asistencia> listarAsistenciasxAlumnos(int codAlu) {
+		Session session = factory.getCurrentSession();
+		Query query = null;
+		try {
+			String hql = "select p from Asistencia p where alumno.codigoAlumno=?1";
+			query = session.createQuery(hql);
+			query.setParameter(1, codAlu);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return query.getResultList();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
 	public List<Asistencia> listarAsistencias() {
 		Session session = factory.getCurrentSession();
 		Query query = null;
@@ -44,25 +60,11 @@ public class AsistenciaDAOImpl implements AsistenciaDAO{
 		return query.getResultList();
 	}
 
-	@Override
-	public void agregar(Asistencia bean) {
-		Session session = factory.getCurrentSession();
-		try {
-			session.save(bean);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
-	@Override
-	public void eliminar(int cod) {
-		Session session = factory.getCurrentSession();
-		try {
-			Alumno bean = session.get(Alumno.class, cod);
-			session.delete(bean);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
+	
+	
+	
+	
+	
+	
 }
