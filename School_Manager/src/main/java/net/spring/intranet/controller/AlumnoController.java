@@ -36,7 +36,7 @@ public class AlumnoController {
 		model.addAttribute("carreras", carreraService.listarCarreras());
 		model.addAttribute("roles", rolService.listarRol());
 		model.addAttribute("alumno", new Alumno());
-		return "Alumno";
+		return "vAlumno";
 	}
 	
 	@RequestMapping("/eliminar")
@@ -113,7 +113,7 @@ public class AlumnoController {
 	@RequestMapping("/filtro")
 	public String listaAlumnoXCarrera(Model model) {
 		model.addAttribute("carreras",carreraService.listarCarreras());
-		return "consultaAlumnos";
+		return "vConsultaAlumnoXCarrera";
 	}
 	
 

@@ -30,7 +30,7 @@ public class ProfesorController {
 		model.addAttribute("roles",rolService.listarRol());
 		model.addAttribute("profesores", profesorService.listarProfesores());
 		model.addAttribute("profesor", new Profesor());
-		return "profesor";
+		return "vProfesor";
 	}
 	@RequestMapping("/eliminar")
 	public String eliminar(@RequestParam("codigo")int cod,RedirectAttributes redirect) {

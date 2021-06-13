@@ -37,7 +37,7 @@ public class SeccionController {
 		model.addAttribute("horarios", horarioService.listarHorario());
 		model.addAttribute("profesores", profesorService.listarProfesores());
 		model.addAttribute("seccion", new Seccion());
-		return "seccion";
+		return "vSeccion";
 	}
 	
 	@RequestMapping("/eliminar")
@@ -112,7 +112,7 @@ public class SeccionController {
 	@RequestMapping("/filtro")
 	public String listaAlumnoXCarrera(Model model) {
 		model.addAttribute("profesores",profesorService.listarProfesores());
-		return "consultaSeccion";
+		return "vConsultaSeccionXProfesor";
 	}
 
 }
