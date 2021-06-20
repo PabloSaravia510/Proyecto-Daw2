@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profesor</title>
-  
+
    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
    	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -113,7 +113,7 @@
 
 <input type="checkbox"  id="nav-toggle">
    
-    <div class="sidebar" >
+<div class="sidebar">
         <div class="sidebar-brand">
             <h2>
             <span class="las la-school"></span>
@@ -136,9 +136,7 @@
 
                     </a>
                     <ul class="submenu">
-                        <li><a href="#">Registro Asistencia</a></li>
-                        <li><a href="#">Autenticaci&oacuten</a></li>
-                        <li><a href="#">Geolocalizaci&oacuten</a></li>
+                        <li><a th:href="@{/asistencia/}">Registro Asistencia</a></li>
                     </ul>
                 </li>
                
@@ -150,7 +148,7 @@
                     </a>
                     <ul class="submenu">
                         <li><a th:href="@{/alumno/}">Alumnos</a></li>
-                        <li><a th:href="@{/profesor/}">Docentes</a></li>
+                        <li><a th:href="@{/docente/}">Docentes</a></li>
                     </ul>
                 </li>
                 <li>
@@ -161,22 +159,21 @@
                         </span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="#">Carrera</a></li>
-                       <li><a th:href="@{/seccion/}">Seccion</a></li>
-                         <li><a th:href="@{/detalle/}">Notas</a></li>
-                        <li><a href="#">Horario</a></li>
+                        <li><a th:href="@{/seccion/}">Secci&oacuten</a></li>
+                        <li><a th:href="@{/detalle/}">Notas</a></li>
                     </ul>
                 </li>
                 <li>
                     <a class="link">
                         <span class="left las la-clipboard"></span>
-                        <span>Consultas</span>
+                        <span>Reporte</span>
                         <span class="right las la-chevron-down"></span>
                     </a>
                     <ul class="submenu">
-                        <li><a th:href="@{/alumno/filtro}">Alumnos por Carrera</a></li>
-                        <li><a th:href="@{/seccion/filtro}">Secciones por Profesor</a></li>
-    
+                        <li><a th:href="@{/alumno/filtro}">Alumnos</a></li>
+    					<li><a th:href="@{/asistencia/filtro}">Asistencias</a></li>
+    					<li><a th:href="@{/detalle/filtro}">Notas</a></li>
+    					<li><a th:href="@{/seccion/filtro}">Seccion</a></li>
                     </ul>
                 </li>
                 <li>
@@ -187,24 +184,30 @@
                 </li>
             </ul>
         </div>
-    </div> 
+</div>
+    
 
-     <div class="main-content">
+
+
+<div class="main-content">
+        
         <header>
             <div class="header-title">
                 <h2>
                     <label for="nav-toggle"><span class="las la-bars"></span></label>Dashboard
                 </h2>
             </div>
+
+
             <div class="user-wrapper">
-                <img src="../img/img1.jpg" width="40px" height="40px" />
+               
                 <div>
-                    <h4>Anybody</h4><small>Super Admin</small>
+                    <h4>Akira Saravia</h4><small>Super Admin</small>
                 </div>
             </div>
         </header>
 
-        <main>
+	<main>	
             <!--EDIT APART FROM THIS-->
             <div class="recent">
                 <div class="project">

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta Alumnos</title>
-  
- 
+<meta charset="ISO-8859-1">
+<title>Asistencia</title>
+
    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
    	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
@@ -108,7 +105,7 @@
 	}*/
 
 </style>
- 
+
 </head>
 <body>
 
@@ -208,56 +205,67 @@
         </header>
 
 
-   <main>
-            <!--EDIT APART FROM THIS-->
-            <div class="recent">
-                <div class="project">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Consulta de Alumnos por Carrera</h3>
-				            <form>
-								  <div class="col-auto">
-									    <label for="exampleInputPassword1">Seleccione Carrera</label>
-									    <select class="form-control" name="profesor" id="idCodCarrera">
-												<option value="0">[Seleccione Carrera]</option>
-												<option th:each="bean:${carreras}"
-																th:value="${bean.codigoCarrera}"
-																th:utext="${bean.descripcionCarrera}">
-												</option>
-										 </select> 	
-								  		<br>
-								 </div> 
-								 <div class="col-auto"><button type="button" class="btn btn-primary mb-2" id="btn-consultar">Consultar</button>
-								 </div>
-						    </form>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%" id="tableAlumnos">
-                                    <thead>
-                                        <tr>
-							                <th>NOMBRE</th>
-							                <th>APELLIDO</th>
-							                <th>USUARIO</th>
-							                <th>CARRERA</th>
-							                <th>EDAD</th>
-							                <th>CELULAR</th>
-							                <th>DIRECCION</th>
-							                <th>ROL</th>
-							                <th>ESTADO</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+
+	<main>
+		<!--EDIT APART FROM THIS-->
+		<div class="recent">
+			<div class="project">
+			      <div class="card">
+			              <div class="card-header">
+		  						 	<h2 class="text-center mt-4">Consulta de Asistencia por Alumnos</h2>
+		
+								    <form>
+										  <div class="col-auto">
+											    <label for="exampleInputPassword1">Seleccione Alumno</label>
+											    <select class="form-control" name="alumno" id="idNumAlumno">
+														<option value="0">[Seleccione Alumno]</option>
+														<option th:each="bean:${alumnos}"
+																		th:value="${bean.codigoAlu}"
+																		th:utext="${bean.nomAlu.value}">
+														</option>
+												 </select> 				    
+										  		
+										  		<br>
+											  
+										 </div> 
+						
+										 <div class="col-auto">
+											      <button type="button" class="btn btn-primary mb-2" id="btn-consultar">Consultar</button>
+										</div>
+									   
+						
+								    </form>
+							</div>
+			
+			
+			
+			 				<div class="card-body">
+		
+								<div class="table-responsive">
+			                   		<table width="100%" id="tableDocentes">
+										  <thead>
+										   <tr>
+														<th>Código</th>
+										                <th>Alumno</th>
+										                <th>Seccion</th>
+										                <th>Curso</th>
+										                <th>Limite Faltas</th>
+										                <th>Estado</th>
+								            </tr>
+										  </thead>
+							 			 <tbody>
+								
+							  			</tbody>
+									</table>
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+	 </main>
+</div>
+
+
 	
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -270,33 +278,35 @@
 	<script th:src="@{/resources/alertifyjs/alertify.min.js}"></script>
 	
 	
-	<script>
 	
 
+	
+	
+	<script>
+
 		$(document).ready(function(){
-			$('#tableAlumnos').DataTable();
+			$('#tableDocentes').DataTable();
 		})
+			
+
 	
 		
 		/* SCRIPT PARA CONSULTAR*/	
 		$(document).on("click","#btn-consultar",function(){
 			var num;
-			num=$("#idCodCarrera").val();
+			num=$("#idNumAlumno").val();
 			
-			$("#tableAlumnos tbody").empty();
+			$("#tableDocentes tbody").empty();
 			
 			
-			$.get("consulta?codCarre=" + num,function(response){
+			$.get("consulta?codigo=" + num,function(response){
 					$.each(response,function(index,item){
-						$("#tableAlumnos").append(  "<tr><td>"+ item.nombreAlumno
-												   + "</td><td>"+ item.apellidoAlumno
-												   + "</td><td>"+ item.usuarioAlumno
-												   + "</td><td>"+ item.carrera.descripcionCarrera
-												   + "</td><td>"+ item.edadAlumno
-												   + "</td><td>"+ item.celularAlumno
-												   + "</td><td>"+ item.direccionAlumno
-												   + "</td><td>"+ item.rol.descripcionRol 
-												   + "</td><td>"+ item.estadoRegistro 
+						$("#tableDocentes").append(  "<tr><td>"+ item.codAsi
+												   + "</td><td>"+item.nomAlu.value
+												   + "</td><td>"+ item.desSec.value
+												   + "</td><td>"+ item.desCurs.value
+												   + "</td><td>"+ item.limiteFaltas 
+												   + "</td><td>"+ item.estado.value
 												   +"</td></tr>");	
 					})
 					
@@ -304,6 +314,113 @@
 			
 		})
 		
+		
+		
+	
+	
+
+	
+		
+		
+		
 	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript">    
+	    $(document).ready(function(){     
+	
+	        $('#idRegistra').bootstrapValidator({     
+	        	feedbackIcons: {
+	                valid: 'glyphicon glyphicon-ok',
+	                invalid: 'glyphicon glyphicon-remove',
+	                validating: 'glyphicon glyphicon-refresh'
+	            },
+	        	 fields:{
+	        		 
+	        		 Nombres: {
+	     	    		selector:'#idNombre',   
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Ingrese nombre'    
+	                        }      
+	                    }    
+	                },   
+	                Descripcion: {
+	     	    		selector:'#idDescripcion',       
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Ingrese descripción'    
+	                        }      
+	                    }    
+	                },    
+	                Stock: {
+	     	    		selector:'#idStock',      
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Ingrese stock'    
+	                        },
+	                        regexp: {    
+	                            regexp: /^[0-9]{1,2}$/,    
+	                            message: 'Campo stock hasta dos cifras'    
+	                        },   
+	                    }    
+	                },
+	                precio: {
+	     	    		selector:'#idPrecio',      
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Ingrese precio'    
+	                        },
+	                        regexp: {    
+	                            regexp: /^(\d+|[0-9]+\.\d{1,2})$/,    
+	                            message: 'Campo precio real hasta dos decimales'    
+	                        },   
+	                    }    
+	                },       				
+	                Fecha: {
+	     	    		selector:'#usr1',   
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Seleccione fecha '    
+	                        },
+	                        date: {
+	                            format: 'YYYY-MM-DD',
+	                            message: 'The format is dd/mm/yyyy'
+	                        },
+	                    }    
+	                },
+	                Tipo: {
+	     	    		selector:'#idTipo',   
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Seleccione tipo medicamento'    
+	                        },					
+	                    }    
+	                } 
+	        	 }
+	        });   				
+	    });    
+	</script>   
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
 </body>
 </html>

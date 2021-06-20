@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
+ 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+     
+    <link rel="stylesheet" th:href="@{/resources/css/index.css}">
+    <script th:src="@{/resources/js/accordion.js}"></script>
+
+<style type="text/css">
+	.sidebar{
+    width: 345px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: 100; /*sin efecto - elemento no posicionado*/
+    transition: width 300ms;   
+	}
+</style>
+
+</head>
+<body>
+    <input type="checkbox"  id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2>
+            <span class="las la-school"></span>
+            <span>School Manager</span>
+        </h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul id="accordion" class="accordion">
+                <li>
+                    <a class="link" th:href="@{/principal/}">
+                        <span class="left las la-home"></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="link" href="#">
+                        <span class="left las la-users"></span>
+                        <span>Asistencia</span>
+                        <span class="right las la-chevron-down"></span>
+
+                    </a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/asistencia/}">Registro Asistencia</a></li>
+                    </ul>
+                </li>
+               
+                <li>
+                    <a class="link">
+                        <span class="left las la-users"></span>
+                        <span>Usuario</span>
+                        <span class="right las la-chevron-down"></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/alumno/}">Alumnos</a></li>
+                        <li><a th:href="@{/docente/}">Docentes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="link">
+                        <span class="left las la-user"></span>
+                        <span>Administraci&oacuten</span>
+                        <span class="right las la-chevron-down">
+                        </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/seccion/}">Secci&oacuten</a></li>
+                        <li><a th:href="@{/detalle/}">Notas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="link">
+                        <span class="left las la-clipboard"></span>
+                        <span>Reporte</span>
+                        <span class="right las la-chevron-down"></span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/alumno/filtro}">Alumnos</a></li>
+    					<li><a th:href="@{/asistencia/filtro}">Asistencias</a></li>
+    					<li><a th:href="@{/detalle/filtro}">Notas</a></li>
+    					<li><a th:href="@{/seccion/filtro}">Seccion</a></li>
+                    </ul>
+                </li>
+                <li>
+                     <a class="link" th:href="@{/ayuda/}">
+                        <span class="left las la-info-circle"></span>
+                        <span>Ayuda</span>
+                     </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <div class="main-content">
+        <header>
+            <div class="header-title">
+                <h2>
+                    <label for="nav-toggle"><span class="las la-bars"></span></label>Dashboard
+                </h2>
+            </div>
+
+     
+
+            <div class="user-wrapper">
+             
+                <div>
+                    <h4>Akira Saravia</h4><small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+
+       
+       
+       
+        <main>
+            <div class="cards">
+               
+                <div class="card-single" >
+	                    <div>
+	                       <a th:href="@{/alumno/}" style="color: black;">
+	                       		 <h1> Estudiantes</h1>
+	          					<span>Estudiantes</span>
+	          				</a>
+	                    </div>
+                         <div><span class="las la-users"></span></div>
+                    
+                </div>
+		
+                
+                <div class="card-single">
+	                    <div>
+	                    	 <a th:href="@{/docente/}" style="color: black;">
+		                         <h1> Docentes</h1>
+		                        <span>Docentes</span>
+	                        </a>
+	                    </div>
+                        <div><span class="las la-clipboard"></span></div>
+                </div>
+
+               
+                <div class="card-single">
+                    <div>
+	                     <a th:href="@{/seccion/filtro}" style="color: black;">	
+		                        <h1>Secciones</h1>
+		                        <span>Secciones</span>
+	                     </a>
+                    </div>
+                        <div><span class="las la-shopping-bag"></span></div>
+                    
+                </div>
+
+               
+                <div class="card-single">
+                    <div>
+                    	<a  th:href="@{/asistencia/}" style="color: black;">
+	                        <h1>Asistencia</h1>
+	                        <span>Asistencia</span>
+                        </a>
+                    </div>
+                    <div><span class="lab la-google-wallet"></span></div>
+                    
+                </div>
+            </div>
+           
+     
+        </main>
+    </div>
+    
+    
+    
+    
+
+	
+</body>
+</html>
