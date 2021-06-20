@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -23,7 +26,8 @@ import lombok.Data;
 @Table(name = "tb_alumno")
 @Data
 public class Alumno implements Serializable {
-
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "COD_ALU")
@@ -56,6 +60,7 @@ public class Alumno implements Serializable {
 	private String estadoRegistro;
 	
 	
+	
 	//realacion de alumno a carrera
 	@ManyToOne
 	@JoinColumn(name = "COD_CAR")
@@ -67,6 +72,10 @@ public class Alumno implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "COD_ROL")
 	private Rol rol;
+	
+	
+	
+	
 	
 	
 	//relacion de de alumno a asistencia

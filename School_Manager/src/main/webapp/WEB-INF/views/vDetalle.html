@@ -228,7 +228,7 @@
 						<table width="100%" id="tableDocentes">
 								  <thead>
 									   <tr>
-											<th>Código</th>
+											<!--  <th>Código</th>-->
 							                <th>Seccion</th>
 							                <th>Curso</th>
 							                <th>Nota1</th>
@@ -237,15 +237,25 @@
 							            </tr>
 								  </thead>
 								  <tbody>
-									<tr th:each="bean:${notas}">
+									<tr th:each="bean:${detalle}">
+									
+									<!--    <td th:text="${bean.codSecAlu}"></td> -->
+								      <td th:text="${bean.seccion.codigoSeccion}"></td>
+								      <td th:text="${bean.seccion.descripcionCurso}"></td>
+								      <td th:text="${bean.nota1}"></td>
+								      <td th:text="${bean.nota2}"></td>
+								      <td th:text="${bean.alumno.nombreAlumno}"></td>
+									  <!--  
 									  <td th:text="${bean.codSecAlu}"></td> 
 								      <td th:text="${bean.desSec.value}"></td>
 								      <td th:text="${bean.desCurs.value}"></td>
 								      <td th:text="${bean.nota1}"></td>
 								      <td th:text="${bean.nota2}"></td>
 								      <td th:text="${bean.nomAlu.value}"></td>
+								   -->
 								   
-								      <td><a th:href="@{buscar/(codigo=${bean.codSecAlu})}" id="btn-Editar" class="btn btn-info btn-editar" data-toggle="modal" data-target="#modalDocente"><i class="far fa-edit"></i></a></td>  
+
+								      <td><a th:href="@{buscarAlumno/(cod=${bean.codSecAlu})}" id="btn-Editar" class="btn btn-info btn-editar" data-toggle="modal" data-target="#modalDocente"><i class="far fa-edit"></i></a></td>  
 								    </tr>  
 								  </tbody>
 						</table>
@@ -270,6 +280,16 @@
 												
 												<div class="container">
 													<div class="row">
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
 														
 														<div class="form-group has-feedback col-md-6">	
 																<label for="exampleInputEmail1"><b>Seccion</b></label><br>

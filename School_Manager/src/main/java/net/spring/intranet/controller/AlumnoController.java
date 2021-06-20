@@ -97,6 +97,9 @@ public class AlumnoController {
 		return "redirect:/alumno/";
 	}
 	
+	
+	
+	
 	@RequestMapping(value = "/buscarAlumno")
 	@ResponseBody
 	public Alumno buscarAlumno(@RequestParam("cod") int cod) {

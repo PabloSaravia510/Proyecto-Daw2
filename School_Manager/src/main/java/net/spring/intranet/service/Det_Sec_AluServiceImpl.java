@@ -3,11 +3,13 @@ package net.spring.intranet.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import net.spring.intranet.dao.AlumnoDAO;
 import net.spring.intranet.dao.Det_Sec_AluDAO;
 import net.spring.intranet.entity.Det_Sec_Alu;
 
+@Service
 public class Det_Sec_AluServiceImpl implements Det_Sec_AluService{
 
 	

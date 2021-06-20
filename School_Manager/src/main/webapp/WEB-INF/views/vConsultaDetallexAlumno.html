@@ -220,9 +220,9 @@
 											    <label for="exampleInputPassword1">Seleccione Alumno</label>
 											    <select class="form-control" name="alumno" id="idNumAlumno">
 														<option value="0">[Seleccione Alumno]</option>
-														<option th:each="bean:${alumnos}"
-																		th:value="${bean.codigoAlu}"
-																		th:utext="${bean.nomAlu.value}">
+														<option th:each="bean:${alumno}"
+																		th:value="${bean.codigoAlumno}"
+																		th:utext="${bean.nombreAlumno}">
 														</option>
 												 </select> 				    
 										  		
@@ -256,6 +256,8 @@
 								            </tr>
 										  </thead>
 								 		  <tbody>
+								
+		
 									
 								  		  </tbody>
 								     </table>
