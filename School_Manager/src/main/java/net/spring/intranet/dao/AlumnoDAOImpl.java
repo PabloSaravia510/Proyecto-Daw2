@@ -15,6 +15,7 @@ import net.spring.intranet.entity.Alumno;
 
 @Repository
 public class AlumnoDAOImpl implements AlumnoDAO{
+	
 	@Autowired
 	private SessionFactory factory;
 	

@@ -8,6 +8,7 @@ public interface AlumnoDAO {
 	
 	public Alumno iniciarSesion(String user, String pass, int codRol);
 	
+	
 	public void insertar(Alumno bean);
 	
 	public void actualizar(Alumno bean);
