@@ -16,8 +16,8 @@ public class AsistenciaServiceImpl implements AsistenciaService{
 	
 	
 	@Override
-	public void actualizar(Asistencia bean) {
-		asistenciaDAO.actualizar(bean);
+	public void insertar(Asistencia bean) {
+		asistenciaDAO.insertar(bean);
 		
 	}
 
@@ -29,6 +29,12 @@ public class AsistenciaServiceImpl implements AsistenciaService{
 	@Override
 	public List<Asistencia> listarAsistencias() {
 		return asistenciaDAO.listarAsistencias();
+	}
+
+	@Override
+	public void eliminar(int cod) {
+		asistenciaDAO.eliminar(cod);
+		
 	}
 
 }

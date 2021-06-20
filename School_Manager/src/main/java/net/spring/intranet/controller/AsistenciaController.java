@@ -39,7 +39,7 @@ public class AsistenciaController {
 		model.addAttribute("asistencias", asistenciaService.listarAsistencias());
 		model.addAttribute("alumnos", alumnoService.listarAlumnos());
 		model.addAttribute("secciones", seccionService.listarSecciones());
-		return "asistencia";
+		return "vAsistencia";
 	}
 	
 	
@@ -63,7 +63,7 @@ public class AsistenciaController {
 			beanSec.setCodigoSeccion(sec);
 			bean.setSeccion(beanSec);
 			
-			asistenciaService.actualizar(bean);
+			asistenciaService.insertar(bean);
 			redirect.addFlashAttribute("MENSAJE","Asistencia registrada");
 			
 		} catch (Exception e) {
@@ -75,6 +75,29 @@ public class AsistenciaController {
 		return "redirect:/asistencia/";
 		
 	}
+	
+	
+	
+	@RequestMapping("/eliminar")
+	public String eliminar(@RequestParam("codigo")int cod,RedirectAttributes redirect) {
+		try {
+			asistenciaService.eliminar(cod);
+			redirect.addFlashAttribute("MENSAJE", "Asistencia Eliminado");
+		} catch (Exception e) {
+			redirect.addFlashAttribute("MENSAJE", "Error en la eliminacion");
+			e.printStackTrace();
+		}
+		return "redirect:/asistencia/";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -91,7 +114,7 @@ public class AsistenciaController {
 	@RequestMapping("/filtro")
 	public String listarAsistenciasxAlumnos(Model model) {
 		model.addAttribute("alumnos",alumnoService.listarAlumnos());
-		return "consultaAsistencia";
+		return "vConsultaAsistenciaXAlumno";
 	}
 	
 	

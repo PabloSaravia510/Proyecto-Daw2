@@ -146,7 +146,7 @@
                     </a>
                     <ul class="submenu">
                         <li><a th:href="@{/alumno/}">Alumnos</a></li>
-                        <li><a th:href="@{/docente/}">Docentes</a></li>
+                        <li><a th:href="@{/profesor/}">Docentes</a></li>
                     </ul>
                 </li>
                 <li>
@@ -237,14 +237,14 @@
 								  </thead>
 								  <tbody>
 									<tr th:each="bean:${asistencias}">
-									  <td th:text="${bean.codAsi}"></td> 
-								      <td th:text="${bean.nomAlu.value}"></td>
-								      <td th:text="${bean.desSec.value}"></td>
-								      <td th:text="${bean.desCurs.value}"></td>
-								      <td th:text="${bean.limiteFaltas}"></td>
-								      <td th:text="${bean.estado.value}"></td>
+									  <td th:text="${bean.codigoAsistencia}"></td> 
+								      <td th:text="${bean.alumno.nombreAlumno}"></td>
+								      <td th:text="${bean.seccion.descripcionSeccion}"></td>
+								      <td th:text="${bean.seccion.descripcionCurso}"></td>
+								      <td th:text="${bean.seccion.lfalSeccion}"></td>
+								      <td th:text="${bean.estadoRegistro}"></td>
 								   
-								         <td><a  th:href="@{eliminar/(codigo=${bean.codAsi})}"  id="btn-Eliminar" class="btn btn-danger btn-eliminar"><i class="far fa-trash-alt"></i></a></td>    
+								         <td><a  th:href="@{eliminar/(codigo=${bean.codigoAsistencia})}"  id="btn-Eliminar" class="btn btn-danger btn-eliminar"><i class="far fa-trash-alt"></i></a></td>    
 			                         </tr>  
 								  </tbody>
 						</table>
@@ -263,7 +263,7 @@
 										</div>
 										
 										<div class="modal-body">
-											 <form method="POST" id="idRegistra" th:action="@{/asistencia/guardar}">	
+											 <form method="POST" id="idRegistra" th:action="@{/asistencia/grabarAsistencia}">	
 										
 													<input type="hidden" id="idCodigo" value="0" name="codigo">
 												
@@ -277,8 +277,8 @@
 															    <select class="form-control" name="alumno" id="idAlumno">
 															      <option value="0">[Seleccione Alumno]</option>
 															      <option th:each="bean:${alumnos}"
-															      		  th:value="${bean.codigoAlu}"
-															      		  th:utext="${bean.nomAlu.value}">
+															      		  th:value="${bean.codigoAlumno}"
+															      		  th:utext="${bean.nombreAlumno}">
 															      </option>
 															    </select>
 														  </div>
@@ -290,8 +290,8 @@
 															    <select class="form-control" name="seccion" id="idSeccion">
 															      <option value="0">[Seleccione Seccion]</option>
 															      <option th:each="bean:${secciones}"
-															      		  th:value="${bean.codSec}"
-															      		  th:utext="${bean.desCurso.value}">
+															      		  th:value="${bean.codigoSeccion}"
+															      		  th:utext="${bean.descripcionSeccion}">
 															      </option>
 															    </select>
 														</div>

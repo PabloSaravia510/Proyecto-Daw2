@@ -20,10 +20,10 @@ public class AsistenciaDAOImpl implements AsistenciaDAO{
 	
 	@Override
 	@Transactional
-	public void actualizar(Asistencia bean) {
+	public void insertar(Asistencia bean) {
 		Session session = factory.getCurrentSession();
 		try {
-			session.update(bean);
+			session.save(bean);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -58,6 +58,21 @@ public class AsistenciaDAOImpl implements AsistenciaDAO{
 			e.printStackTrace();
 		}
 		return query.getResultList();
+	}
+
+	@Override
+	@Transactional
+	public void eliminar(int cod) {
+		Session session = factory.getCurrentSession();
+		try {
+			Asistencia bean = session.get(Asistencia.class, cod);
+			session.delete(bean);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 
