@@ -224,6 +224,7 @@
                                 <table width="100%" id="tableAlumnos">
                                     <thead>
                                         <tr>
+                                        	<th>CODIGO</th>
 							                <th>NOMBRE</th>
 							                <th>APELLIDO</th>
 							                <th>USUARIO</th>
@@ -239,6 +240,7 @@
                                     </thead>
                                     <tbody>
                                         <tr th:each="bean:${alumnos}">
+                                        	  <td th:text="${bean.codigoAlumno}"></td>
 										      <td th:text="${bean.nombreAlumno}"></td>
 										      <td th:text="${bean.apellidoAlumno}"></td>
 										      <td th:text="${bean.usuarioAlumno}"></td>

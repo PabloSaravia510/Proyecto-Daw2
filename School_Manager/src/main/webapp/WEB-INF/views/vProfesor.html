@@ -223,6 +223,7 @@
                                 <table width="100%" id="tableDocentes">
                                     <thead>
                                         <tr>
+                                        	<th>CODIGO</th>
 							                <th>NOMBRE</th>
 							                <th>APELLIDO</th>
 							                <th>USUARIO</th>
@@ -237,6 +238,7 @@
                                     </thead>
                                     <tbody>
                                         	  <tr th:each="bean:${profesores}">
+                                        	   <td th:text="${bean.codigoProfesor}"></td>
 										      <td th:text="${bean.nombreProfesor}"></td>
 										      <td th:text="${bean.apellidoProfesor}"></td>
 										      <td th:text="${bean.usuarioProfesor}"></td>
