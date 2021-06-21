@@ -306,7 +306,7 @@
 																	<label for="exampleInputEmail1"><b>Carrera</b></label><br>
 															        <i class="fas fa-prescription-bottle-alt form-control-feedback2"></i>
 																    <select class="form-control" name="carrera" id="idCarrera">
-																      <option value="0">[Seleccione Carrera]</option>
+																      <option value="">[Seleccione Carrera]</option>
 																      <option th:each="bean:${carreras}"
 																      		  th:value="${bean.codigoCarrera}"
 																      		  th:utext="${bean.descripcionCarrera}">
@@ -330,7 +330,7 @@
 																	<label for="exampleInputEmail1"><b>Rol</b></label><br>
 															        <i class="fas fa-prescription-bottle-alt form-control-feedback2"></i>
 																    <select class="form-control" name="rol" id="idRol">
-																      <option value="0">[Seleccione Rol]</option>
+																      <option value="">[Seleccione Rol]</option>
 																      <option th:each="bean:${roles}"
 																      		  th:value="${bean.codigoRol}"
 																      		  th:utext="${bean.descripcionRol}">
@@ -464,9 +464,11 @@
 		
 		
 	</script>
-	<script type="text/javascript">    
-	    $(document).ready(function(){     
 	
+	
+	<script type="text/javascript">    
+	    $(document).ready(function(){  
+	    	
 	        $('#idRegistra').bootstrapValidator({     
 	        	feedbackIcons: {
 	                valid: 'glyphicon glyphicon-ok',
@@ -475,70 +477,126 @@
 	            },
 	        	 fields:{
 	        		 
-	        		 Nombres: {
+	        		 Nombre: {
 	     	    		selector:'#idNombre',   
 	                    validators: {    
 	                        notEmpty: {    
-	                            message: 'Ingrese nombre'    
+	                            message: 'Este campo es obligatorio'    
+	                        },    
+	     	    			regexp: {  
+	     	    				regexp: /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,50}$/,
+	                            message: 'Solo se admite desde 3 a 50 letras'    
 	                        }      
-	                    }    
-	                },   
-	                Descripcion: {
-	     	    		selector:'#idDescripcion',       
+	                    }
+	                },
+	                Apellido: {
+	     	    		selector:'#idApellido',   
 	                    validators: {    
 	                        notEmpty: {    
-	                            message: 'Ingrese descripción'    
+	                            message: 'Este campo es obligatorio'    
+	                        },    
+	     	    			regexp: {  
+	     	    				regexp: /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,50}$/,
+	                            message: 'Solo se admite desde 3 a 50 letras'    
 	                        }      
-	                    }    
-	                },    
-	                Stock: {
-	     	    		selector:'#idStock',      
-	                    validators: {    
+	                    }
+	                },
+	                Username: {
+	     	    		selector:'#idUsername',      
+	     	    		validators: {    
 	                        notEmpty: {    
-	                            message: 'Ingrese stock'    
-	                        },
-	                        regexp: {    
-	                            regexp: /^[0-9]{1,2}$/,    
-	                            message: 'Campo stock hasta dos cifras'    
-	                        },   
+	                            message: 'Este campo es obligatorio'    
+	                        },    
+	     	    			regexp: {  
+	     	    				regexp: /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,50}$/,
+	                            message: 'Solo se admite desde 3 a 25 letras'    
+	                        }      
+	                    }
+	                },
+	                Password: {
+	     	    		selector:'#idPassword',      
+	                    validators: {    
+	                    	stringLength: {
+	                            min: 8,
+	                            message: 'Debe ingresar 8 caracteres como mínimo'
+	                          },
+	                        notEmpty: {    
+	                        	message: 'Este campo es obligatorio'    
+	                        }
 	                    }    
 	                },
-	                precio: {
-	     	    		selector:'#idPrecio',      
+					Carrera: {
+	     	    		selector:'#idCarrera',   
 	                    validators: {    
 	                        notEmpty: {    
-	                            message: 'Ingrese precio'    
-	                        },
-	                        regexp: {    
-	                            regexp: /^(\d+|[0-9]+\.\d{1,2})$/,    
-	                            message: 'Campo precio real hasta dos decimales'    
-	                        },   
-	                    }    
-	                },       				
-	                Fecha: {
-	     	    		selector:'#usr1',   
-	                    validators: {    
-	                        notEmpty: {    
-	                            message: 'Seleccione fecha '    
-	                        },
-	                        date: {
-	                            format: 'YYYY-MM-DD',
-	                            message: 'The format is dd/mm/yyyy'
-	                        },
-	                    }    
-	                },
-	                Tipo: {
-	     	    		selector:'#idTipo',   
-	                    validators: {    
-	                        notEmpty: {    
-	                            message: 'Seleccione tipo medicamento'    
+	                            message: 'Seleccione carrera'    
 	                        },					
 	                    }    
-	                } 
+	                },
+					Edad: {
+	     	    		selector:'#idEdad',      
+	                    validators: {    
+	                    	stringLength: {
+	                            min: 1,
+	                            max: 2,
+	                            message: 'Solo máximo 2 dígitos '
+	                          },
+	                        notEmpty: {    
+	                        	message: 'Este campo es obligatorio'    
+	                        },
+	                        regexp: {    
+	                        	regexp: /^\d{1,2}/,  
+	                            message: 'Solo admite números enteros '
+	                        }
+	                    }    
+	                },
+	                Celular: {
+	     	    		selector:'#idCelular',      
+	                    validators: {    
+	                        notEmpty: {    
+	                        	message: 'Este campo es obligatorio'    
+	                        },
+	                        regexp: {    
+	                        	regexp: /^9\d{8}$/,
+	                            message: 'Ingrese un número de celular valido'    
+	                        }
+	                    }    
+	                },
+	                Rol: {
+	     	    		selector:'#idRol',   
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Seleccione rol'    
+	                        },					
+	                    }    
+	                },
+	                Estado: {
+	     	    		selector:'#idEstado',   
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Seleccione estado'    
+	                        },					
+	                    }    
+	                },
+	                Direccion: {
+	     	    		selector:'#idDireccion',       
+	                    validators: {
+	                    	stringLength: {
+	                            min: 3,
+	                            max: 50,
+	                            message: 'Ingrese entre 3 y 50 caracteres'
+	                          },
+	                        notEmpty: {    
+	                        	message: 'Este campo es obligatorio'    
+	                        }      
+	                    }
+	                }    
+	                
+	                
 	        	 }
 	        });   				
 	    });    
 	</script>   
-	
+
 </body>
 </html>

@@ -284,7 +284,7 @@
 																	<label for="exampleInputEmail1"><b>Profesor</b></label><br>
 															        <i class="fas fa-prescription-bottle-alt form-control-feedback2"></i>
 																    <select class="form-control" name="profesor" id="idProfesor">
-																      <option value="0">[Seleccione Profesor]</option>
+																      <option value="">[Seleccione Profesor]</option>
 																      <option th:each="bean:${profesores}"
 																      		  th:value="${bean.codigoProfesor}"
 																      		  th:utext="${bean.nombreProfesor}">
@@ -296,7 +296,7 @@
 																	<label for="exampleInputEmail1"><b>Horario</b></label><br>
 															        <i class="fas fa-prescription-bottle-alt form-control-feedback2"></i>
 																    <select class="form-control" name="horario" id="idHorario">
-																      <option value="0">[Seleccione Horario]</option>
+																      <option value="">[Seleccione Horario]</option>
 																      <option th:each="bean:${horarios}"
 																      		  th:value="${bean.codigoHorario}"
 																      		  th:utext="${bean.descripcionHorario}">
@@ -415,9 +415,10 @@
 		})
 		
 	</script>
-	<script type="text/javascript">    
-	    $(document).ready(function(){     
 	
+	<script type="text/javascript">    
+	    $(document).ready(function(){  
+	    	
 	        $('#idRegistra').bootstrapValidator({     
 	        	feedbackIcons: {
 	                valid: 'glyphicon glyphicon-ok',
@@ -426,69 +427,85 @@
 	            },
 	        	 fields:{
 	        		 
-	        		 Nombres: {
-	     	    		selector:'#idNombre',   
-	                    validators: {    
+	        		 Seccion: {
+	     	    		selector:'#idSeccion',   
+	                    validators: { 
+	                    	stringLength: {
+	                            min: 4,
+	                            max: 4,
+	                            message: 'Debe tener 4 caracteres '
+	                          },
 	                        notEmpty: {    
-	                            message: 'Ingrese nombre'    
-	                        }      
-	                    }    
-	                },   
-	                Descripcion: {
-	     	    		selector:'#idDescripcion',       
-	                    validators: {    
-	                        notEmpty: {    
-	                            message: 'Ingrese descripción'    
-	                        }      
-	                    }    
-	                },    
-	                Stock: {
-	     	    		selector:'#idStock',      
-	                    validators: {    
-	                        notEmpty: {    
-	                            message: 'Ingrese stock'    
-	                        },
-	                        regexp: {    
-	                            regexp: /^[0-9]{1,2}$/,    
-	                            message: 'Campo stock hasta dos cifras'    
-	                        },   
-	                    }    
+	                            message: 'Este campo es obligatorio'    
+	                        }    
+	                    }
 	                },
-	                precio: {
-	     	    		selector:'#idPrecio',      
+	                Curso: {
+	     	    		selector:'#idCurso',   
 	                    validators: {    
 	                        notEmpty: {    
-	                            message: 'Ingrese precio'    
-	                        },
-	                        regexp: {    
-	                            regexp: /^(\d+|[0-9]+\.\d{1,2})$/,    
-	                            message: 'Campo precio real hasta dos decimales'    
-	                        },   
-	                    }    
-	                },       				
-	                Fecha: {
-	     	    		selector:'#usr1',   
-	                    validators: {    
-	                        notEmpty: {    
-	                            message: 'Seleccione fecha '    
-	                        },
-	                        date: {
-	                            format: 'YYYY-MM-DD',
-	                            message: 'The format is dd/mm/yyyy'
-	                        },
-	                    }    
+	                            message: 'Este campo es obligatorio'    
+	                        },    
+	     	    			regexp: {  
+	     	    				regexp: /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{3,75}$/,
+	                            message: 'Solo se admite desde 3 a 75 letras'    
+	                        }      
+	                    }
 	                },
-	                Tipo: {
-	     	    		selector:'#idTipo',   
+	                Profesor: {
+	     	    		selector:'#idProfesor',   
 	                    validators: {    
 	                        notEmpty: {    
-	                            message: 'Seleccione tipo medicamento'    
+	                            message: 'Seleccione profesor'    
 	                        },					
 	                    }    
-	                } 
+	                },
+	                Horario: {
+	     	    		selector:'#idHorario',   
+	                    validators: {    
+	                        notEmpty: {    
+	                            message: 'Seleccione horario'    
+	                        },					
+	                    }    
+	                },
+	                LimiteFaltas: {
+	     	    		selector:'#idLfalta',      
+	                    validators: {    
+	                    	stringLength: {
+	                            min: 1,
+	                            max: 1,
+	                            message: 'Debe ser 1 digito '
+	                          },
+	                        notEmpty: {    
+	                        	message: 'Este campo es obligatorio'    
+	                        },
+	                        regexp: {    
+	                        	regexp: /^\d{1}/,  
+	                            message: 'Solo admite un número entero '
+	                        }
+	                    }    
+	                },
+	                LimiteClases: {
+	     	    		selector:'#idLclases',      
+	                    validators: {    
+	                    	stringLength: {
+	                            min: 1,
+	                            max: 2,
+	                            message: 'Solo máximo 2 dígitos '
+	                          },
+	                        notEmpty: {    
+	                        	message: 'Este campo es obligatorio'    
+	                        },
+	                        regexp: {    
+	                        	regexp: /^\d{1,2}/,  
+	                            message: 'Solo admite números enteros '
+	                        }
+	                    }    
+	                }
 	        	 }
 	        });   				
 	    });    
-	</script>
+	</script>   
+	
 </body>
 </html>
