@@ -32,10 +32,10 @@ public class Administrador implements Serializable {
 	private String apellidoAdministrador;
 	
 	@Column(name = "USU_ADMIN")
-	private char usuAdministrador;
+	private String usuAdministrador;
 	
 	@Column(name = "PASS_ADMIN")
-	private char passAdministrador;
+	private String passAdministrador;
 	
 
 	@Column(name = "EST_REG")
