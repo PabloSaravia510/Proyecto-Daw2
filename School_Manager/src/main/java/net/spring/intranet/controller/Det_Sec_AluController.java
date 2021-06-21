@@ -104,7 +104,7 @@ public class Det_Sec_AluController {
 	
 	@RequestMapping(value = "/consulta")
 	@ResponseBody
-	public List<Det_Sec_Alu> consulta(@RequestParam("codAlumno")int codAlumno){
+	public List<Det_Sec_Alu> consulta(@RequestParam("codigo")int codAlumno){
 		return Det_Sec_AluService.consultarDetalleXAlumno(codAlumno);
 	}
 	

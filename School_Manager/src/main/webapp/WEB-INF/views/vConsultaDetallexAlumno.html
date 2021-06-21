@@ -304,12 +304,20 @@
 			$.get("consulta?codigo=" + num,function(response){
 					$.each(response,function(index,item){
 						$("#tableDocentes").append(  "<tr><td>"+ item.codSecAlu
-												   + "</td><td>"+item.desSec.value
-												   + "</td><td>"+ item.desCurs.value
+												   + "</td><td>"+item.seccion.descripcionSeccion
+												   + "</td><td>"+ item.seccion.descripcionCurso
 												   + "</td><td>"+ item.nota1
 												   + "</td><td>"+ item.nota2 
-												   + "</td><td>"+ item.nomAlu.value
+												   + "</td><td>"+ item.alumno.nombreAlumno
 												   +"</td></tr>");	
+						
+						
+						
+						
+						
+						
+						
+						
 					})
 					
 			})
