@@ -275,7 +275,7 @@
 																<label for="exampleInputEmail1"><b>Alumno</b></label><br>
 														        <i class="fas fa-prescription-bottle-alt form-control-feedback2"></i>
 															    <select class="form-control" name="alumno" id="idAlumno">
-															      <option value="0">[Seleccione Alumno]</option>
+															      <option value="">[Seleccione Alumno]</option>
 															      <option th:each="bean:${alumnos}"
 															      		  th:value="${bean.codigoAlumno}"
 															      		  th:utext="${bean.nombreAlumno}">
@@ -288,7 +288,7 @@
 																<label for="exampleInputEmail1"><b>Seccion</b></label><br>
 														        <i class="fas fa-prescription-bottle-alt form-control-feedback2"></i>
 															    <select class="form-control" name="seccion" id="idSeccion">
-															      <option value="0">[Seleccione Seccion]</option>
+															      <option value="">[Seleccione Seccion]</option>
 															      <option th:each="bean:${secciones}"
 															      		  th:value="${bean.codigoSeccion}"
 															      		  th:utext="${bean.descripcionSeccion}">
@@ -384,18 +384,38 @@
 	
 	
 	
-	<script type="text/javascript">    
-	    $(document).ready(function(){     
-	
+<script type="text/javascript">    
+	    $(document).ready(function(){  
+	    	
 	        $('#idRegistra').bootstrapValidator({     
 	        	feedbackIcons: {
 	                valid: 'glyphicon glyphicon-ok',
 	                invalid: 'glyphicon glyphicon-remove',
 	                validating: 'glyphicon glyphicon-refresh'
-	            }
+	            },
+	        	 fields:{
+	        		 Seccion: {
+		     	    		selector:'#idSeccion',   
+		                    validators: {    
+		                        notEmpty: {    
+		                            message: 'Seleccione seccion'    
+		                        },					
+		                    }    
+		                },
+		                Alumno: {
+		     	    		selector:'#idAlumno',   
+		                    validators: {    
+		                        notEmpty: {    
+		                            message: 'Seleccione alumno'    
+		                        },					
+		                    }    
+		                }
+	        	 }
 	        });   				
 	    });    
-	</script>  
+	</script>    
+
+
 	
 	
 	

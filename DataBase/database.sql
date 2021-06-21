@@ -128,7 +128,7 @@ FEC_QR datetime not null
 /*ALTER CONSTRAINT */
 
 ALTER TABLE tb_carrera
-	ADD CONSTRAINT CHK_EST_REG_CAR CHECK (EST_REG IN ('A','I'));
+	ADD CONSTRAINT CHK_EST_REG_CAR CHECK (EST_REG IN ('ACTIVO','INACTIVO'));
 
 ALTER TABLE tb_alumno
 	ADD	CONSTRAINT FK_ALU_COD_CAR_ID FOREIGN KEY (COD_CAR) REFERENCES tb_carrera (COD_CAR),
@@ -192,7 +192,7 @@ INSERT INTO `db_proyecto_dawii`.`tb_carrera` (`COD_CAR`, `DES_CAR`, `EST_REG`) V
 
 INSERT INTO `db_proyecto_dawii`.`tb_administrador` (`COD_ADMIN`, `NOM_ADMIN`, `APE_ADMIN`, `USU_ADMIN`, `PASS_ADMIN`, `COD_ROL`, `EST_REG`) VALUES ('1', 'Manuel', 'Perez', 'mperez', '123', '1', 'ACTIVO');
 INSERT INTO `db_proyecto_dawii`.`tb_administrador` (`COD_ADMIN`, `NOM_ADMIN`, `APE_ADMIN`, `USU_ADMIN`, `PASS_ADMIN`, `COD_ROL`, `EST_REG`) VALUES ('2', 'Juan', 'Balazar', 'jbalazar', '123', '1', 'ACTIVO');
-
+INSERT INTO `db_proyecto_dawii`.`tb_administrador` (`COD_ADMIN`, `NOM_ADMIN`, `APE_ADMIN`, `USU_ADMIN`, `PASS_ADMIN`, `COD_ROL`, `EST_REG`) VALUES ('3', 'Akira', 'Saravia', 'asaravia', '123', '1', 'ACTIVO');
 
 
 
@@ -210,10 +210,11 @@ INSERT INTO `db_proyecto_dawii`.`tb_profesor` (`COD_PRO`, `NOM_PRO`, `APE_PRO`, 
 INSERT INTO `db_proyecto_dawii`.`tb_horario` (`COD_HOR`, `DES_HOR`) VALUES ('1', '2021-03-11 13:05');
 INSERT INTO `db_proyecto_dawii`.`tb_horario` (`COD_HOR`, `DES_HOR`) VALUES ('2', '2021-03-11 15:05');
 INSERT INTO `db_proyecto_dawii`.`tb_horario` (`COD_HOR`, `DES_HOR`) VALUES ('3', '2021-03-11 18:05');
+INSERT INTO `db_proyecto_dawii`.`tb_horario` (`COD_HOR`, `DES_HOR`) VALUES ('4', '2021-04-15 20:30');
 
 
-INSERT INTO `db_proyecto_dawii`.`tb_seccion` (`COD_SEC`,`DES_SEC`, `DES_CURS`, `COD_PRO`, `COD_HOR`, `LFAL_SEC`, `LCLA_SEC`, `EST_REG`) VALUES (1,'T4BB', 'Lenguaje de Programacion',  '1', '1', '3', '14', 'ACTIVO');
-INSERT INTO `db_proyecto_dawii`.`tb_seccion` (`COD_SEC`,`DES_SEC`, `DES_CURS`, `COD_PRO`, `COD_HOR`, `LFAL_SEC`, `LCLA_SEC`, `EST_REG`) VALUES (2,'T4DB', 'Gestion de proyecto',  '2', '2', '3', '7', 'ACTIVO');
+INSERT INTO `db_proyecto_dawii`.`tb_seccion` (`COD_SEC`,`DES_SEC`, `DES_CURS`, `COD_PRO`, `COD_HOR`, `LFAL_SEC`, `LCLA_SEC`, `EST_REG`) VALUES (1,'T4BB', 'Matemática',  '1', '1', '3', '14', 'ACTIVO');
+INSERT INTO `db_proyecto_dawii`.`tb_seccion` (`COD_SEC`,`DES_SEC`, `DES_CURS`, `COD_PRO`, `COD_HOR`, `LFAL_SEC`, `LCLA_SEC`, `EST_REG`) VALUES (2,'T4DB', 'Literatura',  '2', '2', '3', '7', 'ACTIVO');
 
 
 
